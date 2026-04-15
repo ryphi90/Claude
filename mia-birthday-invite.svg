@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 720" width="500" height="720">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#FFF5FA"/>
+      <stop offset="100%" stop-color="#FFD6EC"/>
+    </radialGradient>
+    <radialGradient id="fur" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFF8EC"/>
+      <stop offset="60%" stop-color="#EDD8A5"/>
+      <stop offset="100%" stop-color="#C8A368"/>
+    </radialGradient>
+    <radialGradient id="furEdge" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#EDD8A5"/>
+      <stop offset="100%" stop-color="#C0963C"/>
+    </radialGradient>
+    <linearGradient id="hat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFAED1"/>
+      <stop offset="100%" stop-color="#FF5FA0"/>
+    </linearGradient>
+    <linearGradient id="hatBrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF7AB5"/>
+      <stop offset="100%" stop-color="#FF4D95"/>
+    </linearGradient>
+    <radialGradient id="eyeR" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#5C3020"/>
+      <stop offset="100%" stop-color="#1A0A06"/>
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-color="#AA4070" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- ============================================ -->
+  <!-- BACKGROUND -->
+  <!-- ============================================ -->
+  <rect width="500" height="720" fill="url(#bg)"/>
+
+  <!-- Decorative dashed border -->
+  <rect x="12" y="12" width="476" height="696" rx="22"
+        fill="none" stroke="#FF9EC4" stroke-width="3" stroke-dasharray="14,9"/>
+
+  <!-- Corner stars -->
+  <polygon points="38,38 41,50 53,50 44,57 47,69 38,62 29,69 32,57 23,50 35,50"
+           fill="#FFD700" opacity="0.9"/>
+  <polygon points="462,38 465,50 477,50 468,57 471,69 462,62 453,69 456,57 447,50 459,50"
+           fill="#FFD700" opacity="0.9"/>
+  <polygon points="38,682 41,670 53,670 44,663 47,651 38,658 29,651 32,663 23,670 35,670"
+           fill="#FFD700" opacity="0.9"/>
+  <polygon points="462,682 465,670 477,670 468,663 471,651 462,658 453,651 456,663 447,670 459,670"
+           fill="#FFD700" opacity="0.9"/>
+
+  <!-- Scattered confetti dots -->
+  <circle cx="80"  cy="82"  r="5" fill="#FFD700"  opacity="0.70"/>
+  <circle cx="418" cy="92"  r="4" fill="#FF9EC4"  opacity="0.75"/>
+  <circle cx="58"  cy="200" r="3" fill="#A8E0D0"  opacity="0.70"/>
+  <circle cx="446" cy="178" r="4" fill="#FFD700"  opacity="0.65"/>
+  <circle cx="54"  cy="580" r="3" fill="#FF9EC4"  opacity="0.70"/>
+  <circle cx="448" cy="558" r="5" fill="#FFD700"  opacity="0.70"/>
+  <circle cx="68"  cy="438" r="3" fill="#A8E0D0"  opacity="0.65"/>
+  <circle cx="436" cy="428" r="3" fill="#FF9EC4"  opacity="0.70"/>
+  <circle cx="95"  cy="330" r="4" fill="#FFD700"  opacity="0.55"/>
+  <circle cx="410" cy="320" r="3" fill="#A8E0D0"  opacity="0.60"/>
+
+  <!-- Floating hearts -->
+  <path d="M 75,145 C 72,139 64,140 64,147 C 64,153 75,161 75,161
+           C 75,161 86,153 86,147 C 86,140 78,139 75,145 Z"
+        fill="#FF9EC4" opacity="0.72"/>
+  <path d="M 425,158 C 422,152 414,153 414,160 C 414,166 425,174 425,174
+           C 425,174 436,166 436,160 C 436,153 428,152 425,158 Z"
+        fill="#FFD700" opacity="0.72"/>
+  <path d="M 60,498 C 57,492 49,493 49,500 C 49,506 60,514 60,514
+           C 60,514 71,506 71,500 C 71,493 63,492 60,498 Z"
+        fill="#FF9EC4" opacity="0.60"/>
+  <path d="M 445,490 C 442,484 434,485 434,492 C 434,498 445,506 445,506
+           C 445,506 456,498 456,492 C 456,485 448,484 445,490 Z"
+        fill="#A8E0D0" opacity="0.60"/>
+
+  <!-- ============================================ -->
+  <!-- COWGIRL HAT -->
+  <!-- ============================================ -->
+
+  <!-- Hat shadow under brim -->
+  <ellipse cx="253" cy="226" rx="132" ry="16" fill="#AA3060" opacity="0.22"/>
+
+  <!-- Hat crown -->
+  <path d="M 185,222
+           L 178,168
+           Q 176,122 250,115
+           Q 324,122 322,168
+           L 315,222 Z"
+        fill="url(#hat)" filter="url(#softShadow)"/>
+
+  <!-- Crown center crease indent -->
+  <path d="M 218,136 Q 250,126 282,136 Q 277,154 250,151 Q 223,154 218,136 Z"
+        fill="#FF3D82" opacity="0.32"/>
+
+  <!-- Crown side shading -->
+  <path d="M 185,222 L 178,168 Q 176,142 208,128 L 213,222 Z"
+        fill="#CC5090" opacity="0.28"/>
+  <path d="M 315,222 L 322,168 Q 324,142 292,128 L 287,222 Z"
+        fill="#CC5090" opacity="0.22"/>
+
+  <!-- Hat brim -->
+  <ellipse cx="250" cy="222" rx="137" ry="23" fill="url(#hatBrim)" filter="url(#softShadow)"/>
+  <!-- Brim top shine -->
+  <ellipse cx="248" cy="216" rx="126" ry="13" fill="#FFAED1" opacity="0.42"/>
+  <!-- Brim underside shadow -->
+  <ellipse cx="252" cy="230" rx="118" ry="11" fill="#AA2E68" opacity="0.32"/>
+
+  <!-- Hat band -->
+  <rect x="188" y="209" width="124" height="15" rx="4" fill="#CC0D4C"/>
+  <rect x="188" y="209" width="124" height="6"  rx="3" fill="#FF4D8A" opacity="0.48"/>
+
+  <!-- Gold buckle -->
+  <circle cx="250" cy="216" r="11" fill="#FFD700"/>
+  <circle cx="250" cy="216" r="8"  fill="#FFF0A0"/>
+  <!-- Star on buckle -->
+  <polygon points="250,209.5 251.7,214.8 257.3,214.8 252.8,218 254.5,223.3 250,220.1 245.5,223.3 247.2,218 242.7,214.8 248.3,214.8"
+           fill="#E8A800"/>
+
+  <!-- Flower on hat brim (right side) -->
+  <g transform="translate(303,193)">
+    <circle cx="0"    cy="-9"  r="5.5" fill="#FFB3D1"/>
+    <circle cx="8.5"  cy="-4"  r="5.5" fill="#FFB3D1"/>
+    <circle cx="8.5"  cy="5"   r="5.5" fill="#FFB3D1"/>
+    <circle cx="0"    cy="9"   r="5.5" fill="#FFB3D1"/>
+    <circle cx="-8.5" cy="5"   r="5.5" fill="#FFB3D1"/>
+    <circle cx="-8.5" cy="-4"  r="5.5" fill="#FFB3D1"/>
+    <circle cx="0"    cy="0"   r="6"   fill="#FFE044"/>
+  </g>
+
+  <!-- Hat chin strap hints -->
+  <path d="M 185,224 Q 172,278 177,308" stroke="#CC4080" stroke-width="2.5"
+        fill="none" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 315,224 Q 328,278 323,308" stroke="#CC4080" stroke-width="2.5"
+        fill="none" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- ============================================ -->
+  <!-- EARS -->
+  <!-- ============================================ -->
+
+  <!-- Left ear -->
+  <ellipse cx="162" cy="318" rx="45" ry="70" fill="#C8A050" transform="rotate(-14,162,268)"/>
+  <ellipse cx="162" cy="310" rx="35" ry="57" fill="#DDB870" transform="rotate(-14,162,268)"/>
+  <ellipse cx="155" cy="322" rx="24" ry="42" fill="#EED4A0" transform="rotate(-9,155,272)" opacity="0.72"/>
+  <ellipse cx="170" cy="330" rx="16" ry="30" fill="#F5E4C0" transform="rotate(-5,170,282)" opacity="0.62"/>
+
+  <!-- Right ear -->
+  <ellipse cx="338" cy="318" rx="45" ry="70" fill="#C8A050" transform="rotate(14,338,268)"/>
+  <ellipse cx="338" cy="310" rx="35" ry="57" fill="#DDB870" transform="rotate(14,338,268)"/>
+  <ellipse cx="345" cy="322" rx="24" ry="42" fill="#EED4A0" transform="rotate(9,345,272)" opacity="0.72"/>
+  <ellipse cx="330" cy="330" rx="16" ry="30" fill="#F5E4C0" transform="rotate(5,330,282)" opacity="0.62"/>
+
+  <!-- ============================================ -->
+  <!-- HEAD -->
+  <!-- ============================================ -->
+
+  <!-- Head base -->
+  <ellipse cx="250" cy="314" rx="110" ry="102" fill="url(#fur)"/>
+
+  <!-- Fluffy fur clusters around head -->
+  <!-- Top (under hat brim) -->
+  <circle cx="198" cy="243" r="33" fill="#F0D9A8" opacity="0.88"/>
+  <circle cx="230" cy="235" r="31" fill="#F5E4C0" opacity="0.88"/>
+  <circle cx="268" cy="233" r="32" fill="#F0D9A8" opacity="0.88"/>
+  <circle cx="302" cy="241" r="31" fill="#EDD5A3" opacity="0.88"/>
+
+  <!-- Left side -->
+  <circle cx="150" cy="288" r="29" fill="#EDD5A3" opacity="0.82"/>
+  <circle cx="143" cy="320" r="27" fill="#F0D9A8" opacity="0.82"/>
+  <circle cx="148" cy="352" r="26" fill="#EDD5A3" opacity="0.78"/>
+
+  <!-- Right side -->
+  <circle cx="350" cy="288" r="29" fill="#EDD5A3" opacity="0.82"/>
+  <circle cx="357" cy="320" r="27" fill="#F0D9A8" opacity="0.82"/>
+  <circle cx="352" cy="352" r="26" fill="#EDD5A3" opacity="0.78"/>
+
+  <!-- Chin / bottom head fur -->
+  <circle cx="220" cy="398" r="26" fill="#F0D9A8" opacity="0.88"/>
+  <circle cx="250" cy="406" r="29" fill="#F5E4C0" opacity="0.88"/>
+  <circle cx="280" cy="398" r="26" fill="#F0D9A8" opacity="0.88"/>
+
+  <!-- ============================================ -->
+  <!-- FACE FEATURES -->
+  <!-- ============================================ -->
+
+  <!-- Forehead fluff -->
+  <ellipse cx="250" cy="258" rx="56" ry="26" fill="#F5E4C0" opacity="0.55"/>
+
+  <!-- Eye surround (lighter fur patch) -->
+  <ellipse cx="218" cy="300" rx="27" ry="23" fill="#FFF8EC" opacity="0.80"/>
+  <ellipse cx="282" cy="300" rx="27" ry="23" fill="#FFF8EC" opacity="0.80"/>
+
+  <!-- Eye whites -->
+  <ellipse cx="218" cy="299" rx="19" ry="18" fill="white"/>
+  <ellipse cx="282" cy="299" rx="19" ry="18" fill="white"/>
+
+  <!-- Irises -->
+  <circle cx="218" cy="301" r="14" fill="url(#eyeR)"/>
+  <circle cx="282" cy="301" r="14" fill="url(#eyeR)"/>
+
+  <!-- Pupils -->
+  <circle cx="219" cy="302" r="8.5" fill="#100806"/>
+  <circle cx="283" cy="302" r="8.5" fill="#100806"/>
+
+  <!-- Eye highlights (large + small) -->
+  <circle cx="224" cy="296" r="4.5" fill="white"/>
+  <circle cx="288" cy="296" r="4.5" fill="white"/>
+  <circle cx="213" cy="306" r="2"   fill="white" opacity="0.78"/>
+  <circle cx="277" cy="306" r="2"   fill="white" opacity="0.78"/>
+
+  <!-- Eyebrow fur arches -->
+  <path d="M 200,285 Q 218,276 237,285" stroke="#B08030" stroke-width="4.5"
+        fill="none" stroke-linecap="round" opacity="0.82"/>
+  <path d="M 263,285 Q 282,276 300,285" stroke="#B08030" stroke-width="4.5"
+        fill="none" stroke-linecap="round" opacity="0.82"/>
+
+  <!-- Muzzle area lighter patch -->
+  <ellipse cx="250" cy="344" rx="40" ry="32" fill="#FFF0DC" opacity="0.48"/>
+
+  <!-- Nose -->
+  <ellipse cx="250" cy="333" rx="20" ry="15" fill="#2A1510"/>
+  <!-- Nose highlights -->
+  <ellipse cx="244" cy="328" rx="7.5" ry="4.5" fill="#4A2820" opacity="0.60"/>
+  <ellipse cx="243" cy="327" rx="4.5" ry="2.5" fill="#644444" opacity="0.50"/>
+
+  <!-- Philtrum -->
+  <line x1="250" y1="348" x2="250" y2="356" stroke="#C0A060" stroke-width="1.8" opacity="0.58"/>
+
+  <!-- Mouth smile -->
+  <path d="M 237,356 Q 250,369 263,356"
+        stroke="#2A1510" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Tongue -->
+  <ellipse cx="250" cy="368" rx="12" ry="9" fill="#FF7A8A"/>
+  <line x1="250" y1="360" x2="250" y2="377" stroke="#E05060" stroke-width="1.8" opacity="0.78"/>
+
+  <!-- Cheek blush -->
+  <ellipse cx="190" cy="332" rx="25" ry="16" fill="#FFB3A0" opacity="0.34"/>
+  <ellipse cx="310" cy="332" rx="25" ry="16" fill="#FFB3A0" opacity="0.34"/>
+
+  <!-- ============================================ -->
+  <!-- BODY -->
+  <!-- ============================================ -->
+
+  <!-- Body main ellipse -->
+  <ellipse cx="250" cy="516" rx="128" ry="148" fill="url(#fur)"/>
+
+  <!-- Body fluffy fur - left -->
+  <circle cx="140" cy="436" r="37" fill="#EDD5A3" opacity="0.84"/>
+  <circle cx="130" cy="474" r="35" fill="#F0D9A8" opacity="0.80"/>
+  <circle cx="133" cy="512" r="34" fill="#EDD5A3" opacity="0.84"/>
+  <circle cx="138" cy="550" r="33" fill="#F0D9A8" opacity="0.80"/>
+  <circle cx="146" cy="586" r="31" fill="#EDD5A3" opacity="0.76"/>
+
+  <!-- Body fluffy fur - right -->
+  <circle cx="360" cy="436" r="37" fill="#EDD5A3" opacity="0.84"/>
+  <circle cx="370" cy="474" r="35" fill="#F0D9A8" opacity="0.80"/>
+  <circle cx="367" cy="512" r="34" fill="#EDD5A3" opacity="0.84"/>
+  <circle cx="362" cy="550" r="33" fill="#F0D9A8" opacity="0.80"/>
+  <circle cx="354" cy="586" r="31" fill="#EDD5A3" opacity="0.76"/>
+
+  <!-- Chest light patch -->
+  <ellipse cx="250" cy="442" rx="72" ry="58" fill="#FFF5E0" opacity="0.52"/>
+
+  <!-- ============================================ -->
+  <!-- COLLAR -->
+  <!-- ============================================ -->
+
+  <!-- Collar band -->
+  <path d="M 172,396 Q 250,418 328,396"
+        stroke="#A80E38" stroke-width="15" fill="none" stroke-linecap="round"/>
+  <path d="M 172,396 Q 250,418 328,396"
+        stroke="#E81648" stroke-width="11" fill="none" stroke-linecap="round"/>
+  <path d="M 172,394 Q 250,414 328,394"
+        stroke="#FF5578" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.50"/>
+
+  <!-- Collar ring -->
+  <circle cx="250" cy="414" r="5" fill="none" stroke="#FFD700" stroke-width="2.5"/>
+
+  <!-- Heart tag -->
+  <g transform="translate(250,430)">
+    <!-- Shadow -->
+    <path d="M 2,-12 C -7,-21 -22,-16 -22,-6 C -22,4 -7,14 2,24 C 11,14 26,4 26,-6 C 26,-16 11,-21 2,-12 Z"
+          fill="#AA1B44" opacity="0.30" transform="translate(2,3)"/>
+    <!-- Heart body -->
+    <path d="M 0,-14 C -8,-23 -23,-18 -23,-7 C -23,3 -8,14 0,24 C 8,14 23,3 23,-7 C 23,-18 8,-23 0,-14 Z"
+          fill="#FF5590"/>
+    <!-- Inner highlight -->
+    <path d="M 0,-10 C -5,-16 -15,-12 -15,-4 C -15,3 -5,11 0,19 C 5,11 15,3 15,-4 C 15,-12 5,-16 0,-10 Z"
+          fill="#FF8BB8" opacity="0.50"/>
+    <!-- Shine -->
+    <ellipse cx="-5" cy="-5" rx="4" ry="2.8" fill="white" opacity="0.44" transform="rotate(-30,-5,-5)"/>
+  </g>
+
+  <!-- ============================================ -->
+  <!-- FRONT PAWS -->
+  <!-- ============================================ -->
+
+  <!-- Left paw -->
+  <ellipse cx="196" cy="624" rx="36" ry="25" fill="#EDD5A3"/>
+  <circle cx="176" cy="628" r="13" fill="#E8C88A"/>
+  <circle cx="195" cy="633" r="14" fill="#E8C88A"/>
+  <circle cx="214" cy="628" r="13" fill="#E8C88A"/>
+  <ellipse cx="183" cy="614" rx="14" ry="10" fill="#F0D9A8" opacity="0.82"/>
+  <ellipse cx="207" cy="614" rx="14" ry="10" fill="#F0D9A8" opacity="0.82"/>
+
+  <!-- Right paw -->
+  <ellipse cx="304" cy="624" rx="36" ry="25" fill="#EDD5A3"/>
+  <circle cx="286" cy="628" r="13" fill="#E8C88A"/>
+  <circle cx="304" cy="633" r="14" fill="#E8C88A"/>
+  <circle cx="324" cy="628" r="13" fill="#E8C88A"/>
+  <ellipse cx="293" cy="614" rx="14" ry="10" fill="#F0D9A8" opacity="0.82"/>
+  <ellipse cx="317" cy="614" rx="14" ry="10" fill="#F0D9A8" opacity="0.82"/>
+
+  <!-- ============================================ -->
+  <!-- BIRTHDAY TEXT -->
+  <!-- ============================================ -->
+
+  <!-- Text backdrop pill -->
+  <rect x="88" y="650" width="324" height="54" rx="14"
+        fill="#FF5590" opacity="0.11"/>
+
+  <!-- "Happy Birthday" label -->
+  <text x="250" y="673"
+        text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="23"
+        font-weight="bold"
+        fill="#CC1050"
+        letter-spacing="2">Happy Birthday</text>
+
+  <!-- "Mia!" in large italic -->
+  <text x="250" y="702"
+        text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="42"
+        font-weight="bold"
+        font-style="italic"
+        fill="#FF3D82"
+        letter-spacing="3">Mia!</text>
+</svg>
