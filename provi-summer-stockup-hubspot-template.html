@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>{% module "email_title" path="@hubspot/text" label="Email Title" html="Provi — Summer Stock-Up Sale" %}</title>
+  <!--[if mso]>
+  <noscript>
+    <xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml>
+  </noscript>
+  <![endif]-->
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700;800&family=Oswald:wght@400;500;600;700&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+    /* Reset */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #E8E3D8;
+      font-family: 'Karla', Georgia, serif;
+    }
+
+    .email-wrapper {
+      background-color: #E8E3D8;
+      padding: 32px 0 48px;
+    }
+
+    /* Animated shimmer on hero number — degrades gracefully */
+    @keyframes shimmer {
+      0% { background-position: -400px 0; }
+      100% { background-position: 400px 0; }
+    }
+
+    .discount-pct {
+      background: linear-gradient(90deg, #05B1DA 0%, #8DD1C5 40%, #05B1DA 100%);
+      background-size: 400px 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s infinite linear;
+      display: inline-block;
+    }
+
+    /* Module wrapper resets — prevents HubSpot module divs from breaking table layout */
+    .hs-module-wrapper { display: inline; }
+    td .hs-module-wrapper { display: block; }
+
+    /* Responsive */
+    @media screen and (max-width: 640px) {
+      .email-card { width: 100% !important; border-radius: 0 !important; }
+      .hero-headline { font-size: 52px !important; letter-spacing: -1px !important; }
+      .hero-sub { font-size: 13px !important; }
+      .tier-pct { font-size: 28px !important; }
+      .tier-label { font-size: 14px !important; }
+      .icon-cell { padding: 0 12px !important; }
+      .pad-mobile { padding-left: 24px !important; padding-right: 24px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#E8E3D8;">
+
+<!-- ═══════════════════════════════════════════
+     PREVIEW TEXT
+     Edit via: Email Settings → Preview Text
+     in the HubSpot email editor.
+═══════════════════════════════════════════ -->
+<div style="display:none;font-size:1px;color:#E8E3D8;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+  {{ content.meta_description|default("Order more, save more — up to 20% off through June 30. Unlock your best margin of the season.") }}
+</div>
+
+<div class="email-wrapper" style="background-color:#E8E3D8;padding:32px 0 48px;">
+
+<!-- ═══════════════════════════════════════════
+     OUTER WRAPPER — 600px centered card
+═══════════════════════════════════════════ -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#E8E3D8;">
+  <tr>
+    <td align="center" style="padding:0 16px;">
+
+      <!-- CARD -->
+      <table class="email-card" role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"
+             style="width:600px;max-width:600px;background-color:#F4F0E6;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(4,44,72,0.15);">
+
+        <!-- ─────────────────────────────────────
+             MODULE: Header Logo
+             Edit: logo image source, alt text,
+             and click-through URL
+        ───────────────────────────────────── -->
+        <tr>
+          <td style="background-color:#042C48;padding:28px 40px 24px;text-align:center;">
+            {% module "header_logo" path="@hubspot/linked_image"
+              label="Header — Logo"
+              img={
+                "src": "https://www.provi.com/hubfs/email-assets/provi-logo-white.png",
+                "alt": "Provi",
+                "width": 120,
+                "height": 36
+              }
+              link={
+                "url": { "href": "https://provi.com" },
+                "open_in_new_tab": true
+              }
+            %}
+          </td>
+        </tr>
+
+        <!-- ─────────────────────────────────────
+             MODULE: Eyebrow Date Range
+             Edit: campaign date text
+        ───────────────────────────────────── -->
+        <tr>
+          <td style="background-color:#F4F0E6;padding:28px 40px 0;text-align:center;">
+            <p style="margin:0;font-family:'Oswald',Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#025385;">
+              {% module "eyebrow_date" path="@hubspot/text"
+                label="Eyebrow — Campaign Date Range"
+                html="June 2 &mdash; June 30, 2026"
+              %}
+            </p>
+          </td>
+        </tr>
+
+        <!-- ─────────────────────────────────────
+             MODULE: Hero Headline
+             Edit: main headline text (use <br>
+             to control line breaks)
+        ───────────────────────────────────── -->
+        <tr>
+          <td style="background-color:#F4F0E6;padding:12px 40px 0;text-align:center;">
+            <h1 class="hero-headline" style="margin:0;font-family:'Kanit',Arial,sans-serif;font-size:68px;font-weight:800;line-height:1.0;letter-spacing:-2px;color:#042C48;text-transform:uppercase;">
+              {% module "hero_headline" path="@hubspot/text"
+                label="Hero — Headline"
+                html="SUMMER<br>STOCK-UP"
+              %}
+            </h1>
+          </td>
+        </tr>
+
+        <!-- ─────────────────────────────────────
+             TIER TABLE CARD
+             Edit: each row's percentage and
+             spend threshold independently
+        ───────────────────────────────────── -->
+        <tr>
+          <td style="background-color:#F4F0E6;padding:28px 40px 0;">
+
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                   style="background-color:#FFFFFF;border-radius:12px;overflow:hidden;border:1.5px solid #ECECEC;">
+
+              <!-- Table header -->
+              <tr>
+                <td colspan="2" style="background-color:#042C48;padding:14px 24px;text-align:center;">
+                  <span style="font-family:'Oswald',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#05B1DA;">
+                    {% module "tier_table_heading" path="@hubspot/text"
+                      label="Tier Table — Heading"
+                      html="Tiered Order Savings"
+                    %}
+                  </span>
+                </td>
+              </tr>
+
+              <!-- Column labels (static — design element) -->
+              <tr style="background-color:#F4F0E6;">
+                <td width="35%" style="padding:10px 20px;border-bottom:1.5px solid #ECECEC;">
+                  <span style="font-family:'Oswald',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#A09C9D;">Save</span>
+                </td>
+                <td width="65%" style="padding:10px 20px;border-bottom:1.5px solid #ECECEC;border-left:1.5px solid #ECECEC;">
+                  <span style="font-family:'Oswald',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#A09C9D;">When you spend</span>
+                </td>
+              </tr>
+
+              <!-- ── Tier Row 1 ── -->
+              <tr>
+                <td style="padding:14px 20px;border-bottom:1.5px solid #ECECEC;">
+                  <span class="tier-pct" style="font-family:'Kanit',Arial,sans-serif;font-size:32px;font-weight:700;color:#042C48;line-height:1;">
+                    {% module "tier_1_pct" path="@hubspot/text"
+                      label="Tier 1 — Savings %"
+                      html="5%"
+                    %}
+                  </span>
+                </td>
+                <td class="tier-label" style="padding:14px 20px;border-bottom:1.5px solid #ECECEC;border-left:1.5px solid #ECECEC;">
+                  <span style="font-family:'Oswald',Arial,sans-serif;font-size:16px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:#042C48;">
+                    {% module "tier_1_spend" path="@hubspot/text"
+                      label="Tier 1 — Spend Threshold"
+                      html="Orders over $500"
+                    %}
+                  </span>
+                </td>
+              </tr>
+
+              <!-- ── Tier Row 2 ── -->
+              <tr style="background-color:#F7F7F7;">
+                <td style="padding:14px 20px;border-bottom:1.5px solid #ECECEC;">
+                  <span class="tier-pct" style="font-family:'Kanit',Arial,sans-serif;font-size:32px;font-weight:700;color:#042C48;line-height:1;">
+                    {% module "tier_2_pct" path="@hubspot/text"
+                      label="Tier 2 — Savings %"
+                      html="10%"
+                    %}
+                  </span>
+                </td>
+                <td class="tier-label" style="padding:14px 20px;border-bottom:1.5px solid #ECECEC;border-left:1.5px solid #ECECEC;">
+                  <span style="font-family:'Oswald',Arial,sans-serif;font-size:16px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:#042C48;">
+                    {% module "tier_2_spend" path="@hubspot/text"
+                      label="Tier 2 — Spend Threshold"
+                      html="Orders over $1,000"
+                    %}
+                  </span>
+                </td>
+              </tr>
+
+              <!-- ── Tier Row 3 ── -->
+              <tr>
+                <td style="padding:14px 20px;border-bottom:1.5px solid #ECECEC;">
+                  <span class="tier-pct" style="font-family:'Kanit',Arial,sans-serif;font-size:32px;font-weight:700;color:#042C48;line-height:1;">
+                    {% module "tier_3_pct" path="@hubspot/text"
+                      label="Tier 3 — Savings %"
+                      html="15%"
+                    %}
+                  </span>
+                </td>
+                <td class="tier-label" style="padding:14px 20px;border-bottom:1.5px solid #ECECEC;border-left:1.5px solid #ECECEC;">
+                  <span style="font-family:'Oswald',Arial,sans-serif;font-size:16px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:#042C48;">
+                    {% module "tier_3_spend" path="@hubspot/text"
+                      label="Tier 3 — Spend Threshold"
+                      html="Orders over $2,500"
+                    %}
+                  </span>
+                </td>
+              </tr>
+
+              <!-- ── Tier Row 4 — Hero Tier ── -->
+              <tr style="background-color:#042C48;">
+                <td style="padding:16px 20px;">
+                  <span style="font-family:'Kanit',Arial,sans-serif;font-size:36px;font-weight:800;color:#05B1DA;line-height:1;">
+                    {% module "tier_4_pct" path="@hubspot/text"
+                      label="Tier 4 — Savings % (Hero Row)"
+                      html="20%"
+                    %}
+                  </span>
+                </td>
+                <td style="padding:16px 20px;border-left:1.5px solid rgba(255,255,255,0.15);">
+                  <span style="font-family:'Oswald',Arial,sans-serif;font-size:16px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:#FFFFFF;">
+                    {% module "tier_4_spend" path="@hubspot/text"
+                      label="Tier 4 — Spend Threshold (Hero Row)"
+                      html="Orders over $5,000"
+                    %}
+                  </span>
+                </td>
+              </tr>
+
+            </table>
+          </td>
+        </tr>
+
+        <!-- ─────────────────────────────────────
+             TICKET STUB CONNECTOR (static design)
+        ───────────────────────────────────── -->
+        <tr>
+          <td style="background-color:#F4F0E6;padding:0 40px 0;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding:0;position:relative;text-align:center;height:22px;">
+                  <div style="display:inline-block;width:100%;position:relative;">
+                    <div style="position:absolute;left:-12px;top:0;width:24px;height:24px;border-radius:50%;background-color:#E8E3D8;"></div>
+                    <div style="position:absolute;right:-12px;top:0;width:24px;height:24px;border-radius:50%;background-color:#E8E3D8;"></div>
+                    <div style="height:1px;background: repeating-linear-gradient(90deg, #ECECEC 0px, #ECECEC 8px, transparent 8px, transparent 16px);margin:12px 20px 0;"></div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <!-- ─────────────────────────────────────
+                 MODULE: Body Copy
+                 Edit: both body paragraphs via the
+                 rich text editor (bold, links, color)
+            ───────────────────────────────────── -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                   style="background-color:#042C48;border-radius:12px;overflow:hidden;margin-top:0;">
+              <tr>
+                <td style="padding:32px 32px 28px;text-align:center;">
+                  {% module "body_copy" path="@hubspot/rich_text"
+                    label="Body Copy — Main Paragraph"
+                    html="<p style='margin:0 0 12px;font-family:Karla,Georgia,serif;font-size:17px;line-height:1.65;color:#DDF0FF;'>Your busiest season is right around the corner. Whether you&#39;re stocking a rooftop bar, planning a summer menu, or building out your floor display &mdash; <strong style='color:#05B1DA;font-weight:700;'>Provi has you covered across every category.</strong></p><p style='margin:0;font-family:Karla,Georgia,serif;font-size:16px;line-height:1.6;color:#8DD1C5;'>Spirits, wine, beer, and RTDs from hundreds of distributors &mdash; all in one order. The more you buy, the more you keep.</p>"
+                  %}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- ─────────────────────────────────────
+             MODULE: CTA Button
+             Edit: button text, URL, open in
+             new tab — via HubSpot button module
+        ───────────────────────────────────── -->
+        <tr>
+          <td style="background-color:#F4F0E6;padding:32px 40px 8px;text-align:center;">
+            {% module "cta_button" path="@hubspot/button"
+              label="CTA — Button"
+              button={
+                "text": "SHOP NOW ON PROVI",
+                "url": {
+                  "url": {
+                    "href": "https://provi.com",
+                    "type": "EXTERNAL"
+                  },
+                  "open_in_new_tab": true
+                },
+                "background_color": "#05B1DA",
+                "font_color": "#FFFFFF",
+                "size": "large",
+                "style": "solid"
+              }
+            %}
+          </td>
+        </tr>
+
+        <!-- ─────────────────────────────────────
+             MODULE: Fine Print / Disclaimer
+             Edit: terms text via rich text editor
+        ───────────────────────────────────── -->
+        <tr>
+          <td style="background-color:#F4F0E6;padding:16px 56px 32px;text-align:center;">
+            {% module "fine_print" path="@hubspot/rich_text"
+              label="Fine Print — Disclaimer Text"
+              html="<p style='margin:0;font-family:Karla,Georgia,serif;font-size:12px;line-height:1.6;color:#A09C9D;'>Savings apply to eligible products ordered through Provi between June 2&ndash;30, 2026. Discounts are applied automatically at checkout and cannot be combined with other promotions. Participating distributors only. See Provi.com for full terms.</p>"
+            %}
+          </td>
+        </tr>
+
+        <!-- ─── DIVIDER (static) ─── -->
+        <tr>
+          <td style="background-color:#F4F0E6;padding:0 40px;">
+            <div style="height:1px;background-color:#ECECEC;"></div>
+          </td>
+        </tr>
+
+        <!-- ─────────────────────────────────────
+             MODULE: Quick Links
+             Edit: all three link labels and URLs
+             via the rich text editor. SVG icons
+             are fixed brand assets.
+        ───────────────────────────────────── -->
+        <tr>
+          <td style="background-color:#F4F0E6;padding:32px 24px 28px;">
+            {% module "quick_links" path="@hubspot/rich_text"
+              label="Quick Links — 3 Icon Links (edit labels &amp; URLs)"
+              html="<table role='presentation' width='100%' cellpadding='0' cellspacing='0' border='0'><tr><td width='33%' style='text-align:center;padding:0 16px;vertical-align:top;'><a href='https://provi.com/new-arrivals' style='text-decoration:none;'><div style='width:52px;height:52px;border-radius:50%;background-color:#DDF0FF;margin:0 auto 10px;'><svg width='26' height='26' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' style='display:block;margin:13px auto 0;'><path d='M12 5v14M5 12h14' stroke='#042C48' stroke-width='2.2' stroke-linecap='round'/></svg></div><span style='font-family:Oswald,Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#042C48;display:block;line-height:1.4;'>New<br>Arrivals</span></a></td><td width='33%' style='text-align:center;padding:0 16px;vertical-align:top;'><a href='https://provi.com/orders' style='text-decoration:none;'><div style='width:52px;height:52px;border-radius:50%;background-color:#DDF0FF;margin:0 auto 10px;'><svg width='26' height='26' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' style='display:block;margin:13px auto 0;'><rect x='4' y='3' width='16' height='18' rx='2' stroke='#042C48' stroke-width='2'/><path d='M8 8h8M8 12h6M8 16h4' stroke='#042C48' stroke-width='1.8' stroke-linecap='round'/></svg></div><span style='font-family:Oswald,Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#042C48;display:block;line-height:1.4;'>My<br>Orders</span></a></td><td width='33%' style='text-align:center;padding:0 16px;vertical-align:top;'><a href='https://provi.com/help' style='text-decoration:none;'><div style='width:52px;height:52px;border-radius:50%;background-color:#DDF0FF;margin:0 auto 10px;'><svg width='26' height='26' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' style='display:block;margin:13px auto 0;'><circle cx='12' cy='12' r='9' stroke='#042C48' stroke-width='2'/><path d='M12 16v-1M12 13c0-1.5 2-2 2-3.5a2 2 0 10-4 0' stroke='#042C48' stroke-width='1.8' stroke-linecap='round'/></svg></div><span style='font-family:Oswald,Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#042C48;display:block;line-height:1.4;'>Help<br>Center</span></a></td></tr></table>"
+            %}
+          </td>
+        </tr>
+
+        <!-- ─────────────────────────────────────
+             MODULE: SMS Sign-Up Strip
+             Edit: keyword, shortcode, and copy
+             via rich text editor
+        ───────────────────────────────────── -->
+        <tr>
+          <td style="background-color:#E3F3F1;padding:16px 40px;text-align:center;">
+            {% module "sms_strip" path="@hubspot/rich_text"
+              label="SMS Strip — Text/Shortcode"
+              html="<p style='margin:0;font-family:Karla,Georgia,serif;font-size:14px;font-weight:600;color:#042C48;'>Text <strong style='font-family:Oswald,Arial,sans-serif;font-size:16px;letter-spacing:0.06em;color:#025385;'>JOIN</strong> to <strong style='font-family:Oswald,Arial,sans-serif;font-size:16px;letter-spacing:0.06em;color:#025385;'>55555</strong> to get deal alerts first</p>"
+            %}
+          </td>
+        </tr>
+
+        <!-- ─────────────────────────────────────
+             FOOTER
+             - Footer logo: linked image module
+             - Social icons: static (brand assets)
+             - Legal links: static with HubSpot
+               unsubscribe variable
+             - Address: text module
+        ───────────────────────────────────── -->
+        <tr>
+          <td style="background-color:#042C48;padding:32px 40px 28px;text-align:center;">
+
+            <!-- MODULE: Footer Logo -->
+            {% module "footer_logo" path="@hubspot/linked_image"
+              label="Footer — Logo"
+              img={
+                "src": "https://www.provi.com/hubfs/email-assets/provi-logo-white.png",
+                "alt": "Provi",
+                "width": 100,
+                "height": 28
+              }
+              link={
+                "url": { "href": "https://provi.com" },
+                "open_in_new_tab": true
+              }
+            %}
+
+            <!-- Social Icons (static brand assets) -->
+            <div style="margin:20px 0 24px;">
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/company/provi" target="_blank" style="display:inline-block;margin:0 6px;text-decoration:none;">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="32" height="32" rx="6" fill="rgba(255,255,255,0.12)"/>
+                  <path d="M10 13h3v9h-3v-9zm1.5-4.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM15 13h3v1.3c.4-.8 1.4-1.5 2.7-1.5C23 12.8 24 14.2 24 16.5V22h-3v-4.8c0-1.2-.4-2-1.5-2-.8 0-1.3.6-1.5 1.2-.1.2-.1.5-.1.8V22H15V13z" fill="#8DD1C5"/>
+                  <path d="M10 13h3v9h-3v-9zm1.5-4.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" fill="#05B1DA"/>
+                </svg>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/provi" target="_blank" style="display:inline-block;margin:0 6px;text-decoration:none;">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="32" height="32" rx="6" fill="rgba(255,255,255,0.12)"/>
+                  <rect x="9" y="9" width="14" height="14" rx="4" stroke="#8DD1C5" stroke-width="1.8"/>
+                  <circle cx="16" cy="16" r="3.5" stroke="#05B1DA" stroke-width="1.8"/>
+                  <circle cx="20.5" cy="11.5" r="1" fill="#8DD1C5"/>
+                </svg>
+              </a>
+
+              <!-- Twitter/X -->
+              <a href="https://www.twitter.com/provi" target="_blank" style="display:inline-block;margin:0 6px;text-decoration:none;">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="32" height="32" rx="6" fill="rgba(255,255,255,0.12)"/>
+                  <path d="M10 10h4l2.5 3.5 3-3.5H22l-4.5 5.5L22.5 22H18l-3-4-3.5 4H10l5-6L10 10z" fill="#8DD1C5"/>
+                </svg>
+              </a>
+
+            </div>
+
+            <!-- Legal links — unsubscribe uses HubSpot's required variable -->
+            <p style="margin:0 0 8px;font-family:'Karla',Georgia,serif;font-size:12px;color:rgba(255,255,255,0.45);line-height:1.7;">
+              <a href="{{ unsubscribe_link_v2 }}" style="color:rgba(255,255,255,0.55);text-decoration:underline;">Unsubscribe</a>
+              &nbsp;&middot;&nbsp;
+              <a href="https://provi.com/privacy-policy" style="color:rgba(255,255,255,0.55);text-decoration:underline;">Privacy Policy</a>
+              &nbsp;&middot;&nbsp;
+              <a href="https://provi.com/terms" style="color:rgba(255,255,255,0.55);text-decoration:underline;">Terms of Service</a>
+            </p>
+
+            <!-- MODULE: Footer Address / Copyright -->
+            <p style="margin:0;font-family:'Karla',Georgia,serif;font-size:11px;color:rgba(255,255,255,0.3);line-height:1.6;">
+              {% module "footer_address" path="@hubspot/text"
+                label="Footer — Address &amp; Copyright"
+                html="&copy; 2026 Provi &middot; 321 N. Clark Street, Suite 3550 &middot; Chicago, IL 60654"
+              %}
+            </p>
+
+          </td>
+        </tr>
+
+      </table>
+      <!-- /CARD -->
+
+    </td>
+  </tr>
+</table>
+
+</div>
+
+</body>
+</html>
