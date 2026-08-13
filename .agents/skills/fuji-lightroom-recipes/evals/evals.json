@@ -1,0 +1,67 @@
+{
+  "skill_name": "fuji-lightroom-recipes",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just got a Fujifilm X-E5 and I want a recipe for warm, faded street photography, kind of like old Kodak film. Can you help me build one and tell me which custom slot to save it to?",
+      "expected_output": "Should specify a full recipe using the standard field order (Film Simulation through Exposure Compensation), grounded in the X-E5's actual hardware (six dial sims, FS1-FS3 custom slots, 20 total sims via menu). Should choose a warm-leaning base simulation and back it up with a warm WB shift, softened highlight/shadow tone, and reduced saturation/clarity consistent with a faded look. Should recommend shooting RAW+JPEG across a couple of lighting conditions before finalizing, and should tell the user which FS slot to save it to.",
+      "assertions": [
+        "Presents a complete recipe with every field from the standard format",
+        "Recipe settings are internally consistent with a warm, faded aesthetic",
+        "References X-E5-specific hardware (FS1-FS3 custom slots)",
+        "Recommends RAW+JPEG testing across lighting conditions",
+        "Names a specific FS slot to save the recipe to"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "My Classic Chrome recipe looks great outdoors but indoors under my kitchen lights everyone's skin looks orange and blotchy. What should I change?",
+      "expected_output": "Should diagnose this as a white balance / Color Chrome Effect issue using the symptom-to-dial diagnostic logic, recommending a shift of WB toward blue and/or reducing Color Chrome Effect strength, rather than proposing an unrelated wholesale recipe rewrite. Should acknowledge that recipes can behave differently across lighting conditions and suggest testing the adjusted values specifically under the kitchen lighting.",
+      "assertions": [
+        "Identifies white balance shift and/or Color Chrome Effect as the likely cause",
+        "Recommends a specific, targeted adjustment rather than changing unrelated settings",
+        "Notes that lighting conditions affect recipe behavior",
+        "Suggests re-testing the fix under the same problem lighting"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Here's a photo I love the color grading on [attached reference photo] — moody, desaturated shadows with a slight teal tint, warm skin tones. Can you build me a Lightroom preset that gets close to this look?",
+      "expected_output": "Should analyze the reference image's tonal/color characteristics explicitly (contrast, shadow color, skin rendering) before jumping to numbers. Should translate the look into concrete Develop sliders (Color Grading for the teal shadows, Shadows/Blacks for the moody, desaturated feel, HSL or Color Grading warmth for skin). Should generate an actual .xmp file using generate_xmp_preset.py rather than only describing settings in prose, and should note this is a starting draft to refine against more of the user's photos.",
+      "assertions": [
+        "Explicitly analyzes the reference image before proposing settings",
+        "Maps the look to specific Develop panel controls (Color Grading, Shadows/Blacks, HSL)",
+        "Produces an actual .xmp preset file via the bundled script",
+        "Frames the result as a draft to refine, not a guaranteed exact match"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "whats the diff between a lightroom preset and a profile, and can you just make me a profile that has that filmic teal/orange look baked in?",
+      "expected_output": "Should trigger on casual phrasing. Should clearly explain the preset vs. profile distinction (slider snapshot vs. foundational rendering). Should default toward recommending a preset given the description is achievable with Color Grading/HSL sliders, or if a profile is still wanted, should correctly explain that profiles require an interactive step in Adobe Camera Raw/Lightroom (Alt-click New Preset -> New Profile) and offer to compute the exact Point Curve/Color Grading/HSL numbers to enter there rather than falsely claiming to generate a finished binary profile file.",
+      "assertions": [
+        "Triggers on casual phrasing without explicit 'Lightroom' preset/profile jargon match",
+        "Correctly explains the preset vs profile distinction",
+        "Does not falsely claim to generate a finished .dcp/profile file directly",
+        "Offers concrete numbers for the in-app profile creation workflow if a profile is pursued",
+        "Suggests a preset as a viable simpler alternative"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "I shot a bunch of RAWs with my 'Eterna Bleach Bypass' street recipe on the X-E5 and now I want to edit them in Lightroom to match what the JPEGs looked like. How do I set that up?",
+      "expected_output": "Should use the recipe-to-Lightroom mapping to translate the specific named simulation and recipe settings into Lightroom equivalents: point to a matching Camera Matching profile if available (or Adobe Standard/Color as a fallback with a note about the mismatch), map Grain/Dynamic Range/Highlight-Shadow Tone/Color Chrome settings to their Develop panel equivalents, and be explicit that this is an approximation across two different rendering engines that should be refined against the actual photos.",
+      "assertions": [
+        "References the Camera Matching profile approach for the named simulation",
+        "Maps multiple specific recipe settings (not just film simulation) to Develop panel equivalents",
+        "Acknowledges the mapping is approximate across different rendering engines",
+        "Suggests refining the result against the user's actual RAW files"
+      ],
+      "files": []
+    }
+  ]
+}
