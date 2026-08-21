@@ -170,6 +170,11 @@
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
       "computedHash": "85ffbc05cf88939ba3ff643a315928185af16181470349dfbaad2880047c9900"
+    },
+    "stock-analyzer": {
+      "source": "ai-align/finance-plugin",
+      "sourceType": "github",
+      "computedHash": "dff4fe5cc40e3ea396876ce937a1f3a60a266bb927bb11be054929894c67fe0b"
     }
   }
 }
