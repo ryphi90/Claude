@@ -4,7 +4,7 @@
     xmlns:crs="http://ns.adobe.com/camera-raw-settings/1.0/"
    crs:PresetType="Normal"
    crs:Cluster=""
-   crs:UUID="60C96BA6427046D59F666F04876ECC0A"
+   crs:UUID="46FCF9832DE74E33884075D22B1FAF51"
    crs:SupportsAmount2="True"
    crs:SupportsAmount="True"
    crs:SupportsColor="True"
@@ -19,61 +19,61 @@
    crs:ContactInfo=""
    crs:Version="17.0"
    crs:ProcessVersion="15.4"
-   crs:Contrast2012="-8"
-   crs:Highlights2012="-25"
-   crs:Shadows2012="+20"
+   crs:Contrast2012="-10"
+   crs:Highlights2012="-30"
+   crs:Shadows2012="+40"
    crs:Whites2012="-10"
-   crs:Blacks2012="+8"
+   crs:Blacks2012="+15"
    crs:Texture="-5"
-   crs:Clarity2012="-8"
-   crs:Dehaze="-5"
-   crs:Vibrance="+8"
-   crs:Saturation="-6"
-   crs:HueAdjustmentRed="+12"
-   crs:HueAdjustmentOrange="0"
+   crs:Clarity2012="-10"
+   crs:Dehaze="-8"
+   crs:Vibrance="+25"
+   crs:Saturation="+4"
+   crs:HueAdjustmentRed="+10"
+   crs:HueAdjustmentOrange="-5"
    crs:HueAdjustmentYellow="-15"
    crs:HueAdjustmentGreen="-10"
-   crs:HueAdjustmentAqua="+15"
-   crs:HueAdjustmentBlue="-8"
+   crs:HueAdjustmentAqua="+10"
+   crs:HueAdjustmentBlue="-10"
    crs:HueAdjustmentPurple="0"
    crs:HueAdjustmentMagenta="0"
-   crs:SaturationAdjustmentRed="+5"
-   crs:SaturationAdjustmentOrange="0"
-   crs:SaturationAdjustmentYellow="-22"
-   crs:SaturationAdjustmentGreen="-30"
-   crs:SaturationAdjustmentAqua="-35"
-   crs:SaturationAdjustmentBlue="-18"
-   crs:SaturationAdjustmentPurple="-45"
-   crs:SaturationAdjustmentMagenta="-45"
+   crs:SaturationAdjustmentRed="+20"
+   crs:SaturationAdjustmentOrange="+35"
+   crs:SaturationAdjustmentYellow="-30"
+   crs:SaturationAdjustmentGreen="-20"
+   crs:SaturationAdjustmentAqua="-20"
+   crs:SaturationAdjustmentBlue="-12"
+   crs:SaturationAdjustmentPurple="-40"
+   crs:SaturationAdjustmentMagenta="-40"
    crs:LuminanceAdjustmentRed="0"
-   crs:LuminanceAdjustmentOrange="+6"
-   crs:LuminanceAdjustmentYellow="0"
-   crs:LuminanceAdjustmentGreen="-5"
-   crs:LuminanceAdjustmentAqua="+5"
-   crs:LuminanceAdjustmentBlue="+15"
+   crs:LuminanceAdjustmentOrange="+8"
+   crs:LuminanceAdjustmentYellow="+5"
+   crs:LuminanceAdjustmentGreen="0"
+   crs:LuminanceAdjustmentAqua="+15"
+   crs:LuminanceAdjustmentBlue="+35"
    crs:LuminanceAdjustmentPurple="0"
    crs:LuminanceAdjustmentMagenta="0"
-   crs:SplitToningShadowHue="35"
-   crs:SplitToningShadowSaturation="18"
-   crs:SplitToningHighlightHue="45"
-   crs:SplitToningHighlightSaturation="6"
-   crs:ColorGradeMidtoneHue="40"
-   crs:ColorGradeMidtoneSat="5"
+   crs:SplitToningShadowHue="38"
+   crs:SplitToningShadowSaturation="25"
+   crs:SplitToningHighlightHue="210"
+   crs:SplitToningHighlightSaturation="12"
+   crs:ColorGradeMidtoneHue="215"
+   crs:ColorGradeMidtoneSat="10"
    crs:ColorGradeShadowLum="0"
    crs:ColorGradeMidtoneLum="0"
    crs:ColorGradeHighlightLum="0"
    crs:ColorGradeGlobalHue="0"
    crs:ColorGradeGlobalSat="0"
    crs:ColorGradeGlobalLum="0"
-   crs:ColorGradeBlending="60"
-   crs:SplitToningBalance="-10"
+   crs:ColorGradeBlending="70"
+   crs:SplitToningBalance="-20"
    crs:ShadowTint="0"
    crs:RedHue="+5"
-   crs:RedSaturation="0"
+   crs:RedSaturation="+10"
    crs:GreenHue="0"
    crs:GreenSaturation="0"
    crs:BlueHue="-10"
-   crs:BlueSaturation="+15"
+   crs:BlueSaturation="+25"
    crs:GrainAmount="15"
    crs:GrainSize="20"
    crs:GrainFrequency="50"
@@ -109,32 +109,35 @@
    </crs:Description>
    <crs:ToneCurvePV2012>
     <rdf:Seq>
-     <rdf:li>0, 16</rdf:li>
-     <rdf:li>60, 62</rdf:li>
-     <rdf:li>128, 132</rdf:li>
-     <rdf:li>196, 200</rdf:li>
-     <rdf:li>255, 228</rdf:li>
+     <rdf:li>0, 32</rdf:li>
+     <rdf:li>32, 68</rdf:li>
+     <rdf:li>96, 124</rdf:li>
+     <rdf:li>160, 174</rdf:li>
+     <rdf:li>224, 214</rdf:li>
+     <rdf:li>255, 230</rdf:li>
     </rdf:Seq>
    </crs:ToneCurvePV2012>
    <crs:ToneCurvePV2012Red>
     <rdf:Seq>
-     <rdf:li>0, 6</rdf:li>
-     <rdf:li>128, 130</rdf:li>
-     <rdf:li>255, 255</rdf:li>
+     <rdf:li>0, 4</rdf:li>
+     <rdf:li>128, 121</rdf:li>
+     <rdf:li>255, 250</rdf:li>
     </rdf:Seq>
    </crs:ToneCurvePV2012Red>
    <crs:ToneCurvePV2012Green>
     <rdf:Seq>
      <rdf:li>0, 0</rdf:li>
+     <rdf:li>56, 51</rdf:li>
+     <rdf:li>160, 160</rdf:li>
      <rdf:li>255, 255</rdf:li>
     </rdf:Seq>
    </crs:ToneCurvePV2012Green>
    <crs:ToneCurvePV2012Blue>
     <rdf:Seq>
      <rdf:li>0, 0</rdf:li>
-     <rdf:li>64, 56</rdf:li>
-     <rdf:li>128, 124</rdf:li>
-     <rdf:li>255, 250</rdf:li>
+     <rdf:li>48, 42</rdf:li>
+     <rdf:li>128, 139</rdf:li>
+     <rdf:li>255, 255</rdf:li>
     </rdf:Seq>
    </crs:ToneCurvePV2012Blue>
   </rdf:Description>
