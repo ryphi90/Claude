@@ -20,14 +20,14 @@
    crs:Version="17.0"
    crs:ProcessVersion="15.4"
    crs:CameraProfile="Camera CLASSIC CHROME"
-   crs:Contrast2012="-10"
+   crs:Contrast2012="-15"
    crs:Highlights2012="-35"
-   crs:Shadows2012="+20"
+   crs:Shadows2012="+45"
    crs:Whites2012="-10"
-   crs:Blacks2012="+5"
+   crs:Blacks2012="+15"
    crs:Texture="-5"
-   crs:Clarity2012="-8"
-   crs:Dehaze="0"
+   crs:Clarity2012="-12"
+   crs:Dehaze="-5"
    crs:Vibrance="+15"
    crs:Saturation="+5"
    crs:ParametricShadows="0"
@@ -40,31 +40,31 @@
    crs:HueAdjustmentRed="0"
    crs:HueAdjustmentOrange="-3"
    crs:HueAdjustmentYellow="-18"
-   crs:HueAdjustmentGreen="-10"
+   crs:HueAdjustmentGreen="0"
    crs:HueAdjustmentAqua="-5"
    crs:HueAdjustmentBlue="-5"
    crs:HueAdjustmentPurple="0"
    crs:HueAdjustmentMagenta="0"
    crs:SaturationAdjustmentRed="+10"
    crs:SaturationAdjustmentOrange="+20"
-   crs:SaturationAdjustmentYellow="+5"
-   crs:SaturationAdjustmentGreen="-15"
+   crs:SaturationAdjustmentYellow="+10"
+   crs:SaturationAdjustmentGreen="-10"
    crs:SaturationAdjustmentAqua="-10"
    crs:SaturationAdjustmentBlue="-5"
    crs:SaturationAdjustmentPurple="-20"
    crs:SaturationAdjustmentMagenta="-15"
    crs:LuminanceAdjustmentRed="-5"
    crs:LuminanceAdjustmentOrange="+2"
-   crs:LuminanceAdjustmentYellow="0"
-   crs:LuminanceAdjustmentGreen="+5"
+   crs:LuminanceAdjustmentYellow="+10"
+   crs:LuminanceAdjustmentGreen="+15"
    crs:LuminanceAdjustmentAqua="+10"
    crs:LuminanceAdjustmentBlue="+12"
    crs:LuminanceAdjustmentPurple="0"
    crs:LuminanceAdjustmentMagenta="0"
    crs:SplitToningShadowHue="30"
-   crs:SplitToningShadowSaturation="25"
+   crs:SplitToningShadowSaturation="20"
    crs:SplitToningHighlightHue="45"
-   crs:SplitToningHighlightSaturation="4"
+   crs:SplitToningHighlightSaturation="0"
    crs:SplitToningBalance="-10"
    crs:ColorGradeMidtoneHue="40"
    crs:ColorGradeMidtoneSat="6"
@@ -114,16 +114,16 @@
    </crs:Group>
    <crs:Description>
     <rdf:Alt>
-     <rdf:li xml:lang="x-default">Sunny, warm street look on Classic Chrome: rich red-orange, olive foliage, pastel skies, rolled-off cream highlights, warm shadows.</rdf:li>
+     <rdf:li xml:lang="x-default">Sunny, warm street look on Classic Chrome: bright and airy with open shadows, rich red-orange, pastel skies, rolled-off cream highlights, warm shadows.</rdf:li>
     </rdf:Alt>
    </crs:Description>
    <crs:ToneCurvePV2012>
     <rdf:Seq>
-     <rdf:li>0, 10</rdf:li>
-     <rdf:li>32, 30</rdf:li>
-     <rdf:li>64, 62</rdf:li>
-     <rdf:li>128, 132</rdf:li>
-     <rdf:li>192, 196</rdf:li>
+     <rdf:li>0, 18</rdf:li>
+     <rdf:li>32, 38</rdf:li>
+     <rdf:li>64, 72</rdf:li>
+     <rdf:li>128, 140</rdf:li>
+     <rdf:li>192, 202</rdf:li>
      <rdf:li>235, 228</rdf:li>
      <rdf:li>255, 236</rdf:li>
     </rdf:Seq>
@@ -149,7 +149,7 @@
      <rdf:li>0, 0</rdf:li>
      <rdf:li>64, 58</rdf:li>
      <rdf:li>128, 126</rdf:li>
-     <rdf:li>255, 250</rdf:li>
+     <rdf:li>255, 255</rdf:li>
     </rdf:Seq>
    </crs:ToneCurvePV2012Blue>
   </rdf:Description>
