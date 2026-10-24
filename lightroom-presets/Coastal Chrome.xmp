@@ -39,8 +39,8 @@
    crs:ParametricHighlightSplit="75"
    crs:HueAdjustmentRed="0"
    crs:HueAdjustmentOrange="-3"
-   crs:HueAdjustmentYellow="-10"
-   crs:HueAdjustmentGreen="+10"
+   crs:HueAdjustmentYellow="-18"
+   crs:HueAdjustmentGreen="-10"
    crs:HueAdjustmentAqua="-5"
    crs:HueAdjustmentBlue="-5"
    crs:HueAdjustmentPurple="0"
@@ -48,7 +48,7 @@
    crs:SaturationAdjustmentRed="+10"
    crs:SaturationAdjustmentOrange="+20"
    crs:SaturationAdjustmentYellow="+5"
-   crs:SaturationAdjustmentGreen="0"
+   crs:SaturationAdjustmentGreen="-15"
    crs:SaturationAdjustmentAqua="-10"
    crs:SaturationAdjustmentBlue="-5"
    crs:SaturationAdjustmentPurple="-20"
@@ -61,8 +61,8 @@
    crs:LuminanceAdjustmentBlue="+12"
    crs:LuminanceAdjustmentPurple="0"
    crs:LuminanceAdjustmentMagenta="0"
-   crs:SplitToningShadowHue="35"
-   crs:SplitToningShadowSaturation="15"
+   crs:SplitToningShadowHue="30"
+   crs:SplitToningShadowSaturation="25"
    crs:SplitToningHighlightHue="45"
    crs:SplitToningHighlightSaturation="4"
    crs:SplitToningBalance="-10"
@@ -114,7 +114,7 @@
    </crs:Group>
    <crs:Description>
     <rdf:Alt>
-     <rdf:li xml:lang="x-default">Sunny, warm street look on Classic Chrome: rich red-orange, pastel skies, rolled-off cream highlights, warm shadows.</rdf:li>
+     <rdf:li xml:lang="x-default">Sunny, warm street look on Classic Chrome: rich red-orange, olive foliage, pastel skies, rolled-off cream highlights, warm shadows.</rdf:li>
     </rdf:Alt>
    </crs:Description>
    <crs:ToneCurvePV2012>
@@ -130,14 +130,17 @@
    </crs:ToneCurvePV2012>
    <crs:ToneCurvePV2012Red>
     <rdf:Seq>
-     <rdf:li>0, 8</rdf:li>
-     <rdf:li>128, 130</rdf:li>
+     <rdf:li>0, 12</rdf:li>
+     <rdf:li>64, 68</rdf:li>
+     <rdf:li>128, 131</rdf:li>
      <rdf:li>255, 255</rdf:li>
     </rdf:Seq>
    </crs:ToneCurvePV2012Red>
    <crs:ToneCurvePV2012Green>
     <rdf:Seq>
      <rdf:li>0, 0</rdf:li>
+     <rdf:li>64, 60</rdf:li>
+     <rdf:li>128, 127</rdf:li>
      <rdf:li>255, 255</rdf:li>
     </rdf:Seq>
    </crs:ToneCurvePV2012Green>
