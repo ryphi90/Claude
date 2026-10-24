@@ -39,14 +39,14 @@
    crs:ParametricHighlightSplit="75"
    crs:HueAdjustmentRed="0"
    crs:HueAdjustmentOrange="-3"
-   crs:HueAdjustmentYellow="-18"
+   crs:HueAdjustmentYellow="-5"
    crs:HueAdjustmentGreen="0"
    crs:HueAdjustmentAqua="-5"
    crs:HueAdjustmentBlue="-5"
    crs:HueAdjustmentPurple="0"
    crs:HueAdjustmentMagenta="0"
    crs:SaturationAdjustmentRed="+10"
-   crs:SaturationAdjustmentOrange="+20"
+   crs:SaturationAdjustmentOrange="+10"
    crs:SaturationAdjustmentYellow="+10"
    crs:SaturationAdjustmentGreen="-10"
    crs:SaturationAdjustmentAqua="-10"
@@ -61,8 +61,8 @@
    crs:LuminanceAdjustmentBlue="+12"
    crs:LuminanceAdjustmentPurple="0"
    crs:LuminanceAdjustmentMagenta="0"
-   crs:SplitToningShadowHue="30"
-   crs:SplitToningShadowSaturation="20"
+   crs:SplitToningShadowHue="45"
+   crs:SplitToningShadowSaturation="10"
    crs:SplitToningHighlightHue="45"
    crs:SplitToningHighlightSaturation="0"
    crs:SplitToningBalance="-10"
@@ -130,17 +130,13 @@
    </crs:ToneCurvePV2012>
    <crs:ToneCurvePV2012Red>
     <rdf:Seq>
-     <rdf:li>0, 12</rdf:li>
-     <rdf:li>64, 68</rdf:li>
-     <rdf:li>128, 131</rdf:li>
+     <rdf:li>0, 0</rdf:li>
      <rdf:li>255, 255</rdf:li>
     </rdf:Seq>
    </crs:ToneCurvePV2012Red>
    <crs:ToneCurvePV2012Green>
     <rdf:Seq>
      <rdf:li>0, 0</rdf:li>
-     <rdf:li>64, 60</rdf:li>
-     <rdf:li>128, 127</rdf:li>
      <rdf:li>255, 255</rdf:li>
     </rdf:Seq>
    </crs:ToneCurvePV2012Green>
