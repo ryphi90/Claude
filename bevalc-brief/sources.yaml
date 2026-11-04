@@ -27,7 +27,8 @@
 # and releases are used.
 #
 # Content rules apply on top of these lists. Even an allowed source has its
-# reviews, recipes, gift guides, sponsored posts and awards coverage dropped.
+# reviews, recipes, gift guides and sponsored posts dropped. Awards and rankings
+# coverage IS included (user, 2026-11-04) in its own "Awards & rankings" section.
 
 allow:
   # T1: trade groups, regional bodies, regulators, data owners
