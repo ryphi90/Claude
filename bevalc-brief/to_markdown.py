@@ -25,6 +25,8 @@ def main(src, dst):
         sid, body = sec.groups()
         if sid == "sources":
             continue  # the interactive list; sources are cited on each item
+        if not re.search(r'<article class="item"|<tbody>\s*<tr|<li><time>', body):
+            continue  # empty sections are left out, as on the page
         heading = text(re.sub(r"<small>.*?</small>", "", re.search(r"<h2>(.*?)</h2>", body, re.S).group(1)))
         out += [f"## {heading}", ""]
         note = re.search(r'<p class="secnote">(.*?)</p>', body, re.S)

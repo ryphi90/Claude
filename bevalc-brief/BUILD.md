@@ -1,18 +1,28 @@
 # Building the Bev-Alc Morning Brief
 
-These are the daily steps for building one edition. Each edition covers the last 24 hours and replaces the one before it on the page.
+The scheduled task "Bev-Alc Brief daily edition" (trig_01AwxcYsC8s3maNddjwSSfrJ) runs these steps. It fires into the original Claude session, which has repo push access and the Bigdata.com connector, in two cases:
+
+- **Daily edition:** every day at 7:06am Central, so the edition is ready around 7:30. It builds a new edition covering the last 24 hours, which replaces the previous one on the page.
+- **Update:** when the owner selects **Check for new headlines** on the page (the appended text starts with "Update request"). It adds only new headlines published since `meta/lastUpdate.at` to the current edition. The page allows this at most once an hour after the last update.
+
+Key locations:
 
 - Brief page (published): https://claude.ai/artifact/A3w74NNW8EQ4LeH9PgTzy3
 - Page source: `bevalc-brief/brief.html`
 - Source rules: `bevalc-brief/sources.yaml` and the "Bev-Alc Morning Brief" section of `CLAUDE.md`
 - Edition archive: `bevalc-brief/editions/YYYY-MM-DD.md`
-- Repo: `ryphi90/claude`, branch `claude/add-marketing-skills-zB8Kh`. If the repo isn't checked out, clone that branch first.
+- Repo: `ryphi90/claude`, branch `claude/add-marketing-skills-zB8Kh`. Pull before starting.
 
 ## Steps
 
-1. **Apply page blocks.** Read the page database's `blockRequests` collection (ArtifactData, `url` above). For each doc with `status: "pending"`, move that source to `block` in `sources.yaml` and update the doc to `status: "applied"`.
-2. **Research the last 24 hours.** Find US three-tier beverage alcohol news published since the previous edition. Follow `sources.yaml` and the CLAUDE.md rules: allow and block lists, English-language only, include awards and rankings, exclude juice and soft drinks, include non-alc only for beer, wine and spirits, keep hemp-THC to a minority. Copy figures exactly from the source.
-3. **Rewrite `brief.html` for the new edition.** Keep the page's structure, styles and scripts. Replace the date line, the items in each section, "The numbers" rows and "Coming up". Give each item `data-src` (space-separated source keys). Rebuild the `SOURCES` array in the Sources script so it lists exactly the sources this edition cites, marking new ones `l:0`. Remove the sample banner after the first edition.
-4. **Save the edition.** Run `python3 -I bevalc-brief/to_markdown.py bevalc-brief/brief.html bevalc-brief/editions/<date>.md`.
-5. **Publish.** Read the artifact first (`Artifact` `action: "read"`, `url` above), then publish `bevalc-brief/brief.html` to that `url`. Omit `capabilities` so the page keeps them.
-6. **Commit and push** `brief.html`, `sources.yaml` and the new edition file.
+1. **Mark the run.** Set `meta/lastUpdate` in the page database (ArtifactData, `url` above) to `status: "running"` and `requestedAt` set to now, keeping its other fields.
+2. **Apply page blocks.** Read `blockRequests`. For each doc with `status: "pending"`, move that source to `block` in `sources.yaml` and update the doc to `status: "applied"`.
+3. **Research.** A daily run covers the last 24 hours. An update covers the time since `meta/lastUpdate.at`. Find US three-tier beverage alcohol news in that window and follow `sources.yaml` and the CLAUDE.md rules: allow and block lists, English-language only, include awards and rankings, exclude juice and soft drinks, include non-alc only for beer, wine and spirits, keep hemp-THC to a minority. Copy figures exactly from the source.
+4. **Write the page.**
+   - **Daily:** rewrite `brief.html`. Keep its structure, styles and scripts. Replace the date line, the items in each section, "The numbers" rows and "Coming up". Remove the sample banner.
+   - **Update:** keep everything and add the new items to the right sections. Merge follow-up coverage into an existing item instead of duplicating it. If nothing new turned up, leave the page unchanged.
+   - **Both:** leave out any section that has no items. Remove its `<section>` and its section button (the page also hides empty sections as a safeguard). Give each item `data-src` (space-separated source keys). Keep the `SOURCES` array in the Sources script matched to the sources the edition cites, marking new ones `l:0`.
+5. **Save the edition.** Run `python3 -I bevalc-brief/to_markdown.py bevalc-brief/brief.html bevalc-brief/editions/<date>.md`. An update overwrites that day's file.
+6. **Publish.** Publish `bevalc-brief/brief.html` to the `url` above, reading it first if this session hasn't. Omit `capabilities` so the page keeps them.
+7. **Commit and push** `brief.html`, `sources.yaml` and the edition file.
+8. **Record the update.** Set `meta/lastUpdate` to `{at: <now>, status: "done", kind: "daily"|"update", added: <new item count>}`. On failure, set `status: "failed"` with a one-line `error` a viewer can act on, and keep the previous `at`.

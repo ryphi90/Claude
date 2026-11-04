@@ -90,6 +90,7 @@ h2 small{font:400 12px var(--mono);color:var(--muted);letter-spacing:.04em}
 .bk:hover:not(:disabled){color:var(--warn);border-color:var(--warn)}
 .bk[aria-pressed="true"]{color:var(--warn);border-color:var(--warn);background:var(--warn-soft)}
 .bk:disabled{cursor:default;opacity:.6}
+.upbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding-block:8px 0;font-size:13.5px;color:var(--muted)}
 .empty{color:var(--muted);font-size:14px;font-style:italic;margin:6px 0 0}
 footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 @media (max-width:480px){.cal li{grid-template-columns:78px 1fr}}
@@ -120,6 +121,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
   <button class="chip" type="button" id="s-ahead" data-sec="ahead" aria-pressed="false">Coming up</button>
   <button class="chip" type="button" id="s-sources" data-sec="sources" aria-pressed="false">Sources</button>
 </nav>
+<div class="upbar"><span id="upstatus" role="status">Checking when this edition was last updated…</span><button type="button" class="bk" id="upbtn" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12.6 1.8v2.9H9.7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><span>Check for new headlines</span></button></div>
 
 <!-- TOP 5 -->
 <section id="top5">
@@ -462,6 +464,76 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 </footer>
 </div>
 
+<script>
+/* Drop any section that has no content, and its button. */
+(function(){
+  [].slice.call(document.querySelectorAll('section[id]')).forEach(function(s){
+    if(s.id==='sources') return;
+    if(!s.querySelector('article.item, tbody tr, .cal li')){
+      var chip=document.querySelector('.chip[data-sec="'+s.id+'"]'); if(chip) chip.remove();
+      s.remove();
+    }
+  });
+})();
+</script>
+<script>
+/* Update button: asks the daily-edition task to add new headlines. Owner only, at most once an hour. */
+(function(){
+  var TRIGGER='trig_01AwxcYsC8s3maNddjwSSfrJ', HOUR=36e5, STALE=90*6e4;
+  var out=document.getElementById('upstatus'), btn=document.getElementById('upbtn'), label=btn.lastChild;
+  var db=null, user=null, mcp=null, last=null, firing=false, tick=null;
+  function fmt(ms){return new Date(ms).toLocaleTimeString([], {hour:'numeric', minute:'2-digit'});}
+  function day(ms){var d=new Date(ms), n=new Date(); return d.toDateString()===n.toDateString()?'today':d.toLocaleDateString([], {month:'short', day:'numeric'});}
+  function owner(){try{return !!(user&&user.isOwner());}catch(e){return false;}}
+  function render(){
+    clearTimeout(tick);
+    if(!db){out.textContent='Updates are available when this page is open in Claude.'; btn.disabled=true; return;}
+    if(!last){out.textContent='No update recorded yet.'; btn.disabled=!(owner()&&mcp)||firing; return;}
+    var now=Date.now(), done=last.at?Date.parse(last.at):0, asked=last.requestedAt?Date.parse(last.requestedAt):0;
+    if(last.status==='running' && now-asked<STALE){
+      out.textContent='Checking for new headlines (started '+fmt(asked)+'). The page reloads by itself when it finishes.'; btn.disabled=true;
+      tick=setTimeout(render,6e4); return;
+    }
+    var base=Math.max(done,asked), next=base+HOUR;
+    var msg='Last updated '+day(done)+' at '+fmt(done)+(typeof last.added==='number'?' · '+last.added+(last.added===1?' item':' items')+' added':'');
+    if(last.status==='failed') msg='The last update didn\'t finish'+(last.error?': '+last.error:'')+'.';
+    if(!owner()){out.textContent=msg+'. Only the page owner can check for new headlines.'; btn.disabled=true; return;}
+    if(!mcp){out.textContent=msg+'. Checking for new headlines needs this page open in Claude.'; btn.disabled=true; return;}
+    if(now<next){out.textContent=msg+' · next check available at '+fmt(next)+'.'; btn.disabled=true; tick=setTimeout(render,Math.min(next-now+500,6e4)); return;}
+    out.textContent=msg+'.'; btn.disabled=firing;
+  }
+  btn.addEventListener('click',function(){
+    if(btn.disabled||firing) return;
+    firing=true; btn.disabled=true; out.textContent='Starting the update…';
+    var req={mode:'update', since:last&&last.at||null, requestedAt:new Date().toISOString()};
+    mcp.callTool('Claude Code Remote','fire_trigger',{trigger_id:TRIGGER,text:'Update request: '+JSON.stringify(req)})
+      .then(function(){
+        var body=Object.assign({}, last||{}, {status:'running', requestedAt:req.requestedAt});
+        return db.doc('meta/lastUpdate').set(body);
+      })
+      .then(function(){firing=false; render();})
+      .catch(function(e){
+        firing=false; var c=e&&e.code;
+        if(c==='server_not_connected'||c==='needs_reauth') out.textContent='Connect Claude Code Remote in claude.ai Settings → Connectors to check for new headlines.';
+        else if(c==='not_in_manifest'||c==='approval_required'){out.textContent='This page needs your approval to use Claude Code Remote. Select the button to try again.'; btn.disabled=false;}
+        else if(c==='tool_error') out.textContent='The update couldn\'t start: '+(e.message||'the scheduled task refused it')+'.';
+        else out.textContent='The update may not have started. Wait a few minutes before trying again.';
+      });
+  });
+  render();
+  if(!window.claude||!window.claude.use) return;
+  Promise.all([window.claude.use('db'),window.claude.use('user'),window.claude.use('mcp')]).then(function(r){
+    db=r[0]; user=r[1]; mcp=r[2];
+    if(!db){render(); return;}
+    var timer=setTimeout(function(){ if(!last) out.textContent='Update status can\'t be loaded yet.'; },10000);
+    db.doc('meta/lastUpdate').onSnapshot(function(s){
+      if(!s.metadata.fromCache) clearTimeout(timer);
+      last=s.exists?s.data():null; render();
+    },function(){clearTimeout(timer); db=null; render();});
+    render();
+  });
+})();
+</script>
 <script>
 (function(){
   var SOURCES=[{"k": "thespiritsbusiness", "n": "The Spirits Business", "d": "thespiritsbusiness.com", "t": "T3", "c": 5, "g": "pub", "l": 1}, {"k": "bevnet", "n": "BevNET", "d": "bevnet.com", "t": "T3", "c": 7, "g": "pub", "l": 1}, {"k": "brewbound", "n": "Brewbound", "d": "brewbound.com", "t": "T3", "c": 3, "g": "pub", "l": 1}, {"k": "thedrinksbusiness", "n": "The Drinks Business", "d": "thedrinksbusiness.com", "t": "T3", "c": 2, "g": "pub", "l": 1}, {"k": "wineindustryadvisor", "n": "Wine Industry Advisor", "d": "wineindustryadvisor.com", "t": "T3", "c": 2, "g": "pub", "l": 1}, {"k": "shankennewsdaily", "n": "Shanken News Daily", "d": "shankennewsdaily.com", "t": "T3", "c": 1, "g": "pub", "l": 1}, {"k": "cspdailynews", "n": "CSP Daily News", "d": "cspdailynews.com", "t": "T3", "c": 1, "g": "pub", "l": 1}, {"k": "jdsupra", "n": "JD Supra", "d": "jdsupra.com", "t": "T3", "c": 1, "g": "pub", "l": 1}, {"k": "cnn", "n": "CNN", "d": "cnn.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "forbes", "n": "Forbes", "d": "forbes.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "reuters", "n": "Reuters", "d": "reuters.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "denverpost", "n": "Denver Post", "d": "denverpost.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "law360", "n": "Law360", "d": "law360.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "bnnbloomberg", "n": "BNN Bloomberg", "d": "bnnbloomberg.ca", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "wweek", "n": "Willamette Week", "d": "wweek.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "oregonlive", "n": "The Oregonian", "d": "oregonlive.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "nj1015", "n": "New Jersey 101.5", "d": "nj1015.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "local3news", "n": "Local 3 News", "d": "local3news.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "wect", "n": "WECT", "d": "wect.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "discus", "n": "DISCUS", "d": "distilledspirits.org", "t": "T1", "c": 2, "g": "org", "l": 1}, {"k": "nielseniq", "n": "NielsenIQ", "d": "nielseniq.com", "t": "T1", "c": 2, "g": "org", "l": 1}, {"k": "circana", "n": "Circana", "d": "circana.com", "t": "T1", "c": 2, "g": "org", "l": 1}, {"k": "nabca", "n": "NABCA", "d": "nabca.org", "t": "T1", "c": 1, "g": "org", "l": 1}, {"k": "gallup", "n": "Gallup", "d": "gallup.com", "t": "T1", "c": 1, "g": "org", "l": 1}, {"k": "gpi", "n": "Glass Packaging Institute", "d": "gpi.org", "t": "T1", "c": 1, "g": "org", "l": 1}, {"k": "acsa", "n": "American Craft Spirits Association", "d": "americancraftspirits.org", "t": "T1", "c": 1, "g": "org", "l": 1}, {"k": "sawine", "n": "South Africa Wine", "d": "", "t": "T1", "c": 1, "g": "org", "l": 0}, {"k": "ab-inbev", "n": "AB InBev", "d": "ab-inbev.com", "t": "T1b", "c": 2, "g": "co", "l": 0}, {"k": "bacardi", "n": "Bacardi", "d": "bacardilimited.com", "t": "T1b", "c": 1, "g": "co", "l": 0}, {"k": "tilray", "n": "Tilray", "d": "tilray.com", "t": "T1b", "c": 1, "g": "co", "l": 0}, {"k": "oeneo", "n": "Oeneo", "d": "oeneo.com", "t": "T1b", "c": 1, "g": "co", "l": 0}, {"k": "sovos", "n": "Sovos ShipCompliant", "d": "sovos.com", "t": "T1b", "c": 1, "g": "co", "l": 0}];
