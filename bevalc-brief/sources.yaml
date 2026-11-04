@@ -115,6 +115,14 @@ allow:
   - {domain: gpi.org, name: Glass Packaging Institute, tier: T1, added: 2026-11-04, note: "Packaging trade association. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
   - {domain: jdsupra.com, name: JD Supra, tier: T3, added: 2026-11-04, note: "Law-firm regulatory updates; useful for Gov Affairs. User feedback 2026-11-04: \"Block everything but JD Supra\" (allowed)"}
 
+  # Company releases and official bodies, allowed by the pending rule
+  - {domain: ab-inbev.com, name: AB InBev, tier: T1b, added: 2026-11-04, note: "Appeared as a new source in the 4 Nov sample; not blocked by the next brief, so moved to allow per the pending rule"}
+  - {domain: bacardilimited.com, name: Bacardi, tier: T1b, added: 2026-11-04, note: "Appeared as a new source in the 4 Nov sample; not blocked by the next brief, so moved to allow per the pending rule"}
+  - {domain: tilray.com, name: Tilray, tier: T1b, added: 2026-11-04, note: "Appeared as a new source in the 4 Nov sample; not blocked by the next brief, so moved to allow per the pending rule"}
+  - {domain: oeneo.com, name: Oeneo, tier: T1b, added: 2026-11-04, note: "Appeared as a new source in the 4 Nov sample; not blocked by the next brief, so moved to allow per the pending rule"}
+  - {domain: sovos.com, name: Sovos ShipCompliant, tier: T1b, added: 2026-11-04, note: "Appeared as a new source in the 4 Nov sample; not blocked by the next brief, so moved to allow per the pending rule"}
+  - {domain: sawine.co.za, name: South Africa Wine, tier: T1, added: 2026-11-04, note: "Appeared as a new source in the 4 Nov sample; not blocked by the next brief, so moved to allow per the pending rule"}
+
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
   # blogs came up in research for the sample issue.
@@ -139,9 +147,13 @@ block:
   - {domain: bizcommunity.com, name: BizCommunity, added: 2026-11-04, note: "South African business trade site. User feedback 2026-11-04: \"Block everything but JD Supra\""}
   - {domain: thestreet.com, name: TheStreet, added: 2026-11-04, note: "Business news site (seen via Yahoo syndication). User feedback 2026-11-04: \"Block everything but JD Supra\""}
 
-pending: []
+pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
   # suggested: allow|block, Claude's recommendation for you to confirm.
+  - {domain: bloomberglaw.com, name: Bloomberg Law, tier: T2, added: 2026-11-03, suggested: allow, note: "Bloomberg legal news; paywalled. First used in the 3 Nov edition"}
+  - {domain: engineeringnews.co.za, name: Engineering News, tier: T2, added: 2026-11-03, suggested: allow, note: "South African business news, English-language. First used in the 3 Nov edition"}
+  - {domain: publicradioeast.org, name: Public Radio East, tier: T2, added: 2026-11-03, suggested: allow, note: "Public radio newsroom, eastern NC. First used in the 3 Nov edition"}
+  - {domain: mswalker.com, name: M.S. Walker, tier: T1b, added: 2026-11-03, suggested: allow, note: "Importer/distributor release (Amaro Alpino). First used in the 3 Nov edition"}
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
