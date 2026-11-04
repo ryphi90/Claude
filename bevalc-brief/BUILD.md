@@ -1,6 +1,6 @@
 # Building the Bev-Alc Morning Brief
 
-The scheduled task "Bev-Alc Brief daily edition" (trig_01AwxcYsC8s3maNddjwSSfrJ) runs these steps. It fires into the original Claude session, which has repo push access and the Bigdata.com connector, in two cases:
+The scheduled task "Bev-Alc Brief daily edition" (trig_01AwxcYsC8s3maNddjwSSfrJ) runs these steps. It fires into the original Claude session, which has repo push access, in two cases:
 
 - **Daily edition:** every day at 7:06am Central, so the edition is ready around 7:30. It builds a new edition covering the last 24 hours, which replaces the previous one on the page.
 - **Update:** when the owner selects **Check for new headlines** on the page (the appended text starts with "Update request"). It adds only new headlines published since `meta/lastUpdate.at` to the current edition. The page allows this at most once an hour after the last update.
@@ -18,6 +18,8 @@ Key locations:
 1. **Mark the run.** Set `meta/lastUpdate` in the page database (ArtifactData, `url` above) to `status: "running"` and `requestedAt` set to now, keeping its other fields.
 2. **Apply page blocks.** Read `blockRequests`. For each doc with `status: "pending"`, move that source to `block` in `sources.yaml` and update the doc to `status: "applied"`.
 3. **Research.** A daily run covers the last 24 hours. An update covers the time since `meta/lastUpdate.at`. Find US three-tier beverage alcohol news in that window and follow `sources.yaml` and the CLAUDE.md rules: allow and block lists, English-language only, include awards and rankings, exclude juice and soft drinks, include non-alc only for beer, wine and spirits, keep hemp-THC to a minority. Copy figures exactly from the source.
+   - **Use web search only.** Don't use Bigdata.com or any other news database, not even as an intermediary.
+   - **Verify every item and link the original.** Each item must link the original publisher's article or the issuer's own release, found and checked through web search. Never use a database or syndication copy (Bigdata.com, AOL, Yahoo, MSN). If the original can't be found, or a figure can't be confirmed by a search result, cut the item or the figure. Where sources disagree, use the primary document (for example an SEC filing over a news summary).
 4. **Write the page.**
    - **Daily:** rewrite `brief.html`. Keep its structure, styles and scripts. Replace the date line, the items in each section, "The numbers" rows and "Coming up". Remove the sample banner.
    - **Update:** keep everything and add the new items to the right sections. Merge follow-up coverage into an existing item instead of duplicating it. If nothing new turned up, leave the page unchanged.

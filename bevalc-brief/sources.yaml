@@ -150,7 +150,6 @@ block:
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
   # suggested: allow|block, Claude's recommendation for you to confirm.
-  - {domain: bloomberglaw.com, name: Bloomberg Law, tier: T2, added: 2026-11-03, suggested: allow, note: "Bloomberg legal news; paywalled. First used in the 3 Nov edition"}
   - {domain: engineeringnews.co.za, name: Engineering News, tier: T2, added: 2026-11-03, suggested: allow, note: "South African business news, English-language. First used in the 3 Nov edition"}
   - {domain: publicradioeast.org, name: Public Radio East, tier: T2, added: 2026-11-03, suggested: allow, note: "Public radio newsroom, eastern NC. First used in the 3 Nov edition"}
   - {domain: mswalker.com, name: M.S. Walker, tier: T1b, added: 2026-11-03, suggested: allow, note: "Importer/distributor release (Amaro Alpino). First used in the 3 Nov edition"}
@@ -160,4 +159,3 @@ syndicators:
   - {domain: yahoo.com, note: "Resolve to the original publisher"}
   - {domain: msn.com, note: "Resolve to the original publisher"}
   - {domain: news.google.com, note: "Resolve to the original publisher"}
-  - {domain: app.bigdata.com, note: "Research tool; link the original publisher"}
