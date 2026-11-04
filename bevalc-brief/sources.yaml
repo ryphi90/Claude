@@ -19,6 +19,13 @@
 # matches example.com). Entry fields: domain, name, tier (allow and pending
 # only), added (date), note (why it is on the list; feedback is quoted here).
 #
+# STANDING RULE: English-language sources only (user, 2026-11-04). Any article
+# not published in English is excluded, whatever list its domain is on. A
+# non-English outlet that turns up is added straight to `block` with no need to
+# ask. Official bodies based outside English-speaking countries (Comité
+# Champagne, BNIC, OIV) stay allowed, but only their English-language pages
+# and releases are used.
+#
 # Content rules apply on top of these lists. Even an allowed source has its
 # reviews, recipes, gift guides, sponsored posts and awards coverage dropped.
 
@@ -104,6 +111,7 @@ allow:
   - {domain: local3news.com, name: Local 3 News (Chattanooga), tier: T2, added: 2026-11-04, note: "TV station newsroom. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
   - {domain: wect.com, name: WECT (Wilmington NC), tier: T2, added: 2026-11-04, note: "TV station newsroom. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
   - {domain: gpi.org, name: Glass Packaging Institute, tier: T1, added: 2026-11-04, note: "Packaging trade association. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
+  - {domain: jdsupra.com, name: JD Supra, tier: T3, added: 2026-11-04, note: "Law-firm regulatory updates; useful for Gov Affairs. User feedback 2026-11-04: \"Block everything but JD Supra\" (allowed)"}
 
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
@@ -124,15 +132,14 @@ block:
   - {domain: thewhiskeywash.com, name: The Whiskey Wash, added: 2026-11-04, note: "Enthusiast blog. User feedback 2026-11-04: \"Block all suggestions\""}
   - {domain: parkstreet.com, name: Park Street, added: 2026-11-04, note: "Vendor content marketing. User feedback 2026-11-04: \"Block all suggestions\""}
   - {domain: drinks-intel.com, name: Drinks Intel, added: 2026-11-04, note: "Rewrites other outlets' stories. User feedback 2026-11-04: \"Block all suggestions\""}
+  - {domain: sueddeutsche.de, name: Süddeutsche Zeitung, added: 2026-11-04, note: "German daily newspaper. User feedback 2026-11-04: \"Block everything but JD Supra\""}
+  - {domain: elfinanciero.com.mx, name: El Financiero, added: 2026-11-04, note: "Mexican business daily. User feedback 2026-11-04: \"Block everything but JD Supra\""}
+  - {domain: bizcommunity.com, name: BizCommunity, added: 2026-11-04, note: "South African business trade site. User feedback 2026-11-04: \"Block everything but JD Supra\""}
+  - {domain: thestreet.com, name: TheStreet, added: 2026-11-04, note: "Business news site (seen via Yahoo syndication). User feedback 2026-11-04: \"Block everything but JD Supra\""}
 
-pending:
-  # Appeared in the 4 Nov sample issue. Each needs an allow or block decision.
-  # suggested: what Claude would choose, for you to confirm or override.
-  - {domain: sueddeutsche.de, name: Süddeutsche Zeitung, tier: T2, added: 2026-11-04, suggested: allow, note: "German daily newspaper"}
-  - {domain: elfinanciero.com.mx, name: El Financiero, tier: T2, added: 2026-11-04, suggested: allow, note: "Mexican business daily"}
-  - {domain: bizcommunity.com, name: BizCommunity, tier: T3, added: 2026-11-04, suggested: allow, note: "South African business trade site"}
-  - {domain: jdsupra.com, name: JD Supra, tier: T3, added: 2026-11-04, suggested: allow, note: "Law-firm regulatory updates; useful for Gov Affairs"}
-  - {domain: thestreet.com, name: TheStreet, tier: T2, added: 2026-11-04, suggested: allow, note: "Business news site (seen via Yahoo syndication)"}
+pending: []
+  # Sources seen in a brief that have no decision yet. Each entry carries
+  # suggested: allow|block, Claude's recommendation for you to confirm.
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
