@@ -129,6 +129,20 @@ allow:
 
   - {domain: mswalker.com, name: M.S. Walker, tier: T1b, added: 2026-11-04, note: "Importer/distributor release (Amaro Alpino). First used in the 3 Nov edition. Not blocked by the 4 Nov run, so moved to allow per the pending rule"}
 
+  # Added from the user's example newsletters
+  - {domain: fingers.email, name: Fingers (Dave Infante newsletter), tier: T3, added: 2026-11-04, note: "Reported drinks-business newsletter. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: libationlawblog.com, name: Libation Law Blog, tier: T3, added: 2026-11-04, note: "Beverage law analysis. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: politico.com, name: Politico, tier: T2, added: 2026-11-04, note: "Blocks the search tool; cite via outlets that carry its reporting. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: chainstoreage.com, name: Chain Store Age, tier: T3, added: 2026-11-04, note: "Retail trade press. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: getflavor.com, name: FLAVOR & The Menu, tier: T3, added: 2026-11-04, note: "Restaurant trade press. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: thebanner.com, name: The Baltimore Banner, tier: T2, added: 2026-11-04, note: "Newspaper. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: courthousenews.com, name: Courthouse News Service, tier: T2, added: 2026-11-04, note: "Court and legal news. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: bankinfosecurity.com, name: Bank Info Security, tier: T3, added: 2026-11-04, note: "Security trade press. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: gastroendonews.com, name: Gastroenterology & Endoscopy News, tier: T3, added: 2026-11-04, note: "Medical trade press (health research). From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: meininger.de, name: Meininger's Wine Business International, tier: T3, added: 2026-11-04, note: "English-language pages only. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: ablusa.org, name: American Beverage Licensees (ABL), tier: T1, added: 2026-11-04, note: "Retailer trade association. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+  - {domain: events.nielseniq.com, name: NIQ weekly reports, tier: T1, added: 2026-11-04, note: "Total Alcohol weekly executive summary PDFs. From the user's example newsletters (30 Oct-3 Nov 2026)"}
+
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
   # blogs came up in research for the sample issue.
