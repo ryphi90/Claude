@@ -143,6 +143,8 @@ allow:
   - {domain: ablusa.org, name: American Beverage Licensees (ABL), tier: T1, added: 2026-11-04, note: "Retailer trade association. From the user's example newsletters (30 Oct-3 Nov 2026)"}
   - {domain: events.nielseniq.com, name: NIQ weekly reports, tier: T1, added: 2026-11-04, note: "Total Alcohol weekly executive summary PDFs. From the user's example newsletters (30 Oct-3 Nov 2026)"}
 
+  - {domain: drinks-intel.com, name: Drinks Intel, tier: T3, added: 2026-11-04, note: "Previously blocked as rewriting other outlets. User feedback 2026-11-04: \"include drinks intel into the allow list\""}
+
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
   # blogs came up in research for the sample issue.
@@ -161,7 +163,6 @@ block:
   - {domain: vinetur.com, name: Vinetur, added: 2026-11-04, note: "Rewrites other outlets' stories. User feedback 2026-11-04: \"Block all suggestions\""}
   - {domain: thewhiskeywash.com, name: The Whiskey Wash, added: 2026-11-04, note: "Enthusiast blog. User feedback 2026-11-04: \"Block all suggestions\""}
   - {domain: parkstreet.com, name: Park Street, added: 2026-11-04, note: "Vendor content marketing. User feedback 2026-11-04: \"Block all suggestions\""}
-  - {domain: drinks-intel.com, name: Drinks Intel, added: 2026-11-04, note: "Rewrites other outlets' stories. User feedback 2026-11-04: \"Block all suggestions\""}
   - {domain: sueddeutsche.de, name: Süddeutsche Zeitung, added: 2026-11-04, note: "German daily newspaper. User feedback 2026-11-04: \"Block everything but JD Supra\""}
   - {domain: elfinanciero.com.mx, name: El Financiero, added: 2026-11-04, note: "Mexican business daily. User feedback 2026-11-04: \"Block everything but JD Supra\""}
   - {domain: bizcommunity.com, name: BizCommunity, added: 2026-11-04, note: "South African business trade site. User feedback 2026-11-04: \"Block everything but JD Supra\""}
@@ -173,6 +174,7 @@ pending:
   - {domain: wwaytv3.com, name: WWAY (Wilmington NC), tier: T2, added: 2026-11-04, suggested: allow, note: "TV station newsroom. First used in the 4 Nov update"}
   - {domain: distributionstrategy.com, name: Distribution Strategy Group, tier: T3, added: 2026-11-04, suggested: allow, note: "Distribution industry trade site. First used in the 4 Nov update"}
   - {domain: marijuanamoment.net, name: Marijuana Moment, tier: T3, added: 2026-11-04, suggested: allow, note: "Cannabis policy trade news; used to carry Politico reporting (politico.com blocks search). First used in the 4 Nov update"}
+  - {domain: inc.com, name: Inc., tier: T2, added: 2026-11-04, suggested: allow, note: "Business magazine. First used in the 4 Nov update"}
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
