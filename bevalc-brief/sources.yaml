@@ -94,6 +94,17 @@ allow:
   - {domain: daily.sevenfifty.com, name: SevenFifty Daily, tier: T3, added: 2026-11-04}
   - {domain: harpers.co.uk, name: Harpers Wine & Spirit, tier: T3, added: 2026-11-04}
 
+  # Added from feedback
+  - {domain: bevnet.com, name: BevNET, tier: T3, added: 2026-11-04, note: "Trade press with reported news; also runs paid PR posts, which would be excluded. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
+  - {domain: brewbound.com, name: Brewbound, tier: T3, added: 2026-11-04, note: "BevNET's beer trade site. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
+  - {domain: wineindustryadvisor.com, name: Wine Industry Advisor, tier: T3, added: 2026-11-04, note: "Mix of reporting and reposted releases. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
+  - {domain: cspdailynews.com, name: CSP Daily News, tier: T3, added: 2026-11-04, note: "Convenience-store trade press. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
+  - {domain: wweek.com, name: Willamette Week, tier: T2, added: 2026-11-04, note: "Portland alt-weekly newspaper. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
+  - {domain: nj1015.com, name: New Jersey 101.5, tier: T2, added: 2026-11-04, note: "Radio station newsroom. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
+  - {domain: local3news.com, name: Local 3 News (Chattanooga), tier: T2, added: 2026-11-04, note: "TV station newsroom. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
+  - {domain: wect.com, name: WECT (Wilmington NC), tier: T2, added: 2026-11-04, note: "TV station newsroom. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
+  - {domain: gpi.org, name: Glass Packaging Institute, tier: T1, added: 2026-11-04, note: "Packaging trade association. User feedback 2026-11-04: \"allow the trade sites BevNET, Brewbound, Wine Industry Advisor and CSP; the English-language newspapers and local TV and radio newsrooms; and the Glass Packaging Institute\""}
+
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
   # blogs came up in research for the sample issue.
@@ -104,30 +115,23 @@ block:
   - {domain: trytruli.com, name: Truli, added: 2026-11-04, note: "Brand blog"}
   - {domain: recovered.org, name: Recovered.org, added: 2026-11-04, note: "Health content site, not news"}
 
+  # Added from feedback
+  - {domain: politicsweb.co.za, name: Politicsweb, added: 2026-11-04, note: "Reposts statements; cite the issuing body instead. User feedback 2026-11-04: \"Block all suggestions\""}
+  - {domain: benzinga.com, name: Benzinga, added: 2026-11-04, note: "Mostly reposted press releases; cite the company instead. User feedback 2026-11-04: \"Block all suggestions\""}
+  - {domain: boursorama.com, name: Boursorama, added: 2026-11-04, note: "French finance portal reposting releases; cite the company. User feedback 2026-11-04: \"Block all suggestions\""}
+  - {domain: livedoor.com, name: Livedoor, added: 2026-11-04, note: "Japanese aggregator; cite the original (Reuters). User feedback 2026-11-04: \"Block all suggestions\""}
+  - {domain: vinetur.com, name: Vinetur, added: 2026-11-04, note: "Rewrites other outlets' stories. User feedback 2026-11-04: \"Block all suggestions\""}
+  - {domain: thewhiskeywash.com, name: The Whiskey Wash, added: 2026-11-04, note: "Enthusiast blog. User feedback 2026-11-04: \"Block all suggestions\""}
+  - {domain: parkstreet.com, name: Park Street, added: 2026-11-04, note: "Vendor content marketing. User feedback 2026-11-04: \"Block all suggestions\""}
+  - {domain: drinks-intel.com, name: Drinks Intel, added: 2026-11-04, note: "Rewrites other outlets' stories. User feedback 2026-11-04: \"Block all suggestions\""}
+
 pending:
   # Appeared in the 4 Nov sample issue. Each needs an allow or block decision.
   # suggested: what Claude would choose, for you to confirm or override.
-  - {domain: bevnet.com, name: BevNET, tier: T3, added: 2026-11-04, suggested: allow, note: "Trade press with reported news; also runs paid PR posts, which would be excluded"}
-  - {domain: brewbound.com, name: Brewbound, tier: T3, added: 2026-11-04, suggested: allow, note: "BevNET's beer trade site"}
-  - {domain: wineindustryadvisor.com, name: Wine Industry Advisor, tier: T3, added: 2026-11-04, suggested: allow, note: "Mix of reporting and reposted releases"}
-  - {domain: cspdailynews.com, name: CSP Daily News, tier: T3, added: 2026-11-04, suggested: allow, note: "Convenience-store trade press"}
-  - {domain: wweek.com, name: Willamette Week, tier: T2, added: 2026-11-04, suggested: allow, note: "Portland alt-weekly newspaper"}
-  - {domain: nj1015.com, name: New Jersey 101.5, tier: T2, added: 2026-11-04, suggested: allow, note: "Radio station newsroom"}
-  - {domain: local3news.com, name: Local 3 News (Chattanooga), tier: T2, added: 2026-11-04, suggested: allow, note: "TV station newsroom"}
-  - {domain: wect.com, name: WECT (Wilmington NC), tier: T2, added: 2026-11-04, suggested: allow, note: "TV station newsroom"}
   - {domain: sueddeutsche.de, name: Süddeutsche Zeitung, tier: T2, added: 2026-11-04, suggested: allow, note: "German daily newspaper"}
   - {domain: elfinanciero.com.mx, name: El Financiero, tier: T2, added: 2026-11-04, suggested: allow, note: "Mexican business daily"}
   - {domain: bizcommunity.com, name: BizCommunity, tier: T3, added: 2026-11-04, suggested: allow, note: "South African business trade site"}
-  - {domain: politicsweb.co.za, name: Politicsweb, tier: T2, added: 2026-11-04, suggested: block, note: "Reposts statements; cite the issuing body instead"}
-  - {domain: benzinga.com, name: Benzinga, tier: T1b, added: 2026-11-04, suggested: block, note: "Mostly reposted press releases; cite the company instead"}
   - {domain: jdsupra.com, name: JD Supra, tier: T3, added: 2026-11-04, suggested: allow, note: "Law-firm regulatory updates; useful for Gov Affairs"}
-  - {domain: boursorama.com, name: Boursorama, tier: T1b, added: 2026-11-04, suggested: block, note: "French finance portal reposting releases; cite the company"}
-  - {domain: livedoor.com, name: Livedoor, tier: T2, added: 2026-11-04, suggested: block, note: "Japanese aggregator; cite the original (Reuters)"}
-  - {domain: vinetur.com, name: Vinetur, tier: T3, added: 2026-11-04, suggested: block, note: "Rewrites other outlets' stories"}
-  - {domain: thewhiskeywash.com, name: The Whiskey Wash, tier: T3, added: 2026-11-04, suggested: block, note: "Enthusiast blog"}
-  - {domain: parkstreet.com, name: Park Street, tier: T1b, added: 2026-11-04, suggested: block, note: "Vendor content marketing"}
-  - {domain: drinks-intel.com, name: Drinks Intel, tier: T3, added: 2026-11-04, suggested: block, note: "Rewrites other outlets' stories"}
-  - {domain: gpi.org, name: Glass Packaging Institute, tier: T1, added: 2026-11-04, suggested: allow, note: "Packaging trade association"}
   - {domain: thestreet.com, name: TheStreet, tier: T2, added: 2026-11-04, suggested: allow, note: "Business news site (seen via Yahoo syndication)"}
 
 syndicators:
