@@ -4,10 +4,11 @@
 # you give feedback ("block X", "allow Y", "make Z tier 2").
 #
 #   allow    Use freely. The tier sets ranking and the label on each item.
-#   block    Never use. Matching items are dropped and counted under "Left out".
+#   block    Never use. Matching items are dropped. Viewers can also add blocks
+#            with the Block button in the brief's Sources section.
 #   pending  Sources that appeared in a brief but have no decision yet. They are
-#            used only if the item passes the content rules, and the brief
-#            flags them as "New source" so you can allow or block them.
+#            used only if the item passes the content rules and are marked
+#            "New source". One not blocked by the next brief moves to allow.
 #   syndicators  Republishers (AOL, Yahoo, MSN...). Never credited as a source:
 #            the brief resolves the item to the original publisher and applies
 #            that publisher's list status.
