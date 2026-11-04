@@ -90,11 +90,7 @@ h2 small{font:400 12px var(--mono);color:var(--muted);letter-spacing:.04em}
 .bk:hover:not(:disabled){color:var(--warn);border-color:var(--warn)}
 .bk[aria-pressed="true"]{color:var(--warn);border-color:var(--warn);background:var(--warn-soft)}
 .bk:disabled{cursor:default;opacity:.6}
-.tf{display:inline-flex;align-items:center;gap:6px;margin-right:8px}
-.tf select{font:500 13px var(--body);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:4px 8px}
-.tfsep{width:1px;align-self:stretch;background:var(--line);margin:0 6px 0 0}
 .empty{color:var(--muted);font-size:14px;font-style:italic;margin:6px 0 0}
-.tfbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-block:8px 0;font-size:13.5px;color:var(--muted)}
 footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 @media (max-width:480px){.cal li{grid-template-columns:78px 1fr}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
@@ -105,20 +101,11 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
   <div class="eyebrow">US Three-Tier · Daily Brief · Wed 4 Nov 2026</div>
   <h1>Bev-Alc Morning Brief</h1>
   <p class="dek">Wine, spirits, beer, RTD, non-alc and hemp-THC news that affects US suppliers, distributors and retailers. Sorted by source quality, then by impact on the three-tier system.</p>
-  <div class="sample"><b>Sample issue.</b> This page keeps every item from 28 Oct onward, and new items are added each morning. It opens on <b>Today</b>. Picking another timeframe shows what has been collected and, for the page owner, starts an update for any days not yet built. Items marked <span class="flag">HEADLINE ONLY</span> came from article lists this session could not open in full. A few items dated only "early Nov" are filed under 1 Nov.</div>
+  <div class="sample"><b>Sample issue.</b> This first issue covers 28 Oct – 4 Nov so you can see every section filled. Each normal issue covers the last 24 hours and replaces the one before it. Past issues are saved as Markdown files in the repo under <code>bevalc-brief/editions/</code>. Items marked <span class="flag">HEADLINE ONLY</span> came from article lists this session could not open in full.</div>
   <div class="legend"><span><b class="newsrc">NEW SOURCE</b> not yet on your allow or block list (listed under Sources)</span><span><b class="lt1">T1</b> data &amp; official bodies</span><span><b class="lt1b">T1b</b> company releases</span><span><b class="lt2">T2</b> general / business press</span><span><b class="lt3">T3</b> trade press</span></div>
 </header>
 
-<nav class="filter" aria-label="Filter the brief">
-  <label class="tf" for="tf"><span>TIMEFRAME</span>
-    <select id="tf">
-      <option value="today" selected>Today</option>
-      <option value="yesterday">Yesterday</option>
-      <option value="7d">Last 7 days</option>
-      <option value="month">This month</option>
-      <option value="lastmonth">Last month</option>
-    </select></label>
-  <span class="tfsep" aria-hidden="true"></span>
+<nav class="filter" aria-label="Show section">
   <span>SECTION</span>
   <button class="chip" type="button" id="s-all" data-sec="all" aria-pressed="true">All</button>
   <button class="chip" type="button" id="s-top5" data-sec="top5" aria-pressed="false">Top 5</button>
@@ -133,14 +120,12 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
   <button class="chip" type="button" id="s-ahead" data-sec="ahead" aria-pressed="false">Coming up</button>
   <button class="chip" type="button" id="s-sources" data-sec="sources" aria-pressed="false">Sources</button>
 </nav>
-<div class="tfbar"><span id="tfstatus" role="status"></span><button type="button" class="bk" id="tfbuild" hidden>Update</button></div>
 
 <!-- TOP 5 -->
 <section id="top5">
   <h2>Top 5 <small>read these if nothing else</small></h2>
-  <p class="empty" hidden>Nothing in this section for the selected timeframe.</p>
 
-  <article class="item" data-tier="T3" data-date="2026-10-29" data-src="thespiritsbusiness bevnet bacardi">
+  <article class="item" data-tier="T3" data-src="thespiritsbusiness bevnet bacardi">
     <span class="stripe"></span><div>
     <h3>Reyes takes Bacardi in 11 markets from RNDC, effective 1 Jan 2027</h3>
     <div class="meta"><span class="tier">T3</span><span>The Spirits Business · BevNET</span><span>29 Oct</span></div>
@@ -150,7 +135,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T2" data-date="2026-11-04" data-src="cnn cspdailynews nj1015 forbes jdsupra">
+  <article class="item" data-tier="T2" data-src="cnn cspdailynews nj1015 forbes jdsupra">
     <span class="stripe"></span><div>
     <h3>Hemp-THC drinks: 11 Dec federal cutoff holds; Illinois pulls them from shelves 12 Nov</h3>
     <div class="meta"><span class="tier">T2</span><span>CNN · Forbes · CSP · NJ 101.5 · JD Supra</span><span>28 Oct – 4 Nov</span></div>
@@ -160,7 +145,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T2" data-date="2026-10-31" data-src="denverpost law360 brewbound">
+  <article class="item" data-tier="T2" data-src="denverpost law360 brewbound">
     <span class="stripe"></span><div>
     <h3>Judge bars Constellation from dropping Coors Distributing in Denver until arbitration</h3>
     <div class="meta"><span class="tier">T2</span><span>Denver Post · Law360 · Brewbound</span><span>29–31 Oct</span></div>
@@ -170,7 +155,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T3" data-date="2026-11-02" data-src="bevnet brewbound">
+  <article class="item" data-tier="T3" data-src="bevnet brewbound">
     <span class="stripe"></span><div>
     <h3>RNDC wind-down continues: KEG 1 closes Kentucky deal; creditor settlement moves Chapter 11 liquidation forward</h3>
     <div class="meta"><span class="tier">T3</span><span>BevNET · Brewbound</span><span>2 Nov</span><span class="flag">HEADLINE ONLY</span><span class="newsrc">NEW SOURCE</span></div>
@@ -180,7 +165,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T3" data-date="2026-11-02" data-src="bevnet circana">
+  <article class="item" data-tier="T3" data-src="bevnet circana">
     <span class="stripe"></span><div>
     <h3>Anheuser-Busch North America CEO Brendan Whitworth to leave at end of November</h3>
     <div class="meta"><span class="tier">T3</span><span>BevNET</span><span>2 Nov</span><span class="newsrc">NEW SOURCE</span></div>
@@ -194,23 +179,22 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 <!-- NUMBERS -->
 <section id="numbers">
   <h2>The numbers <small>figures quoted exactly from the source</small></h2>
-  <p class="empty" hidden>Nothing in this section for the selected timeframe.</p>
   <p class="secnote">Each row names the original data owner, followed by the outlet that reported it.</p>
   <div class="ledgerwrap"><table class="ledger">
     <thead><tr><th>Metric</th><th>Value</th><th>Data owner · reported by</th></tr></thead>
     <tbody>
-      <tr data-date="2026-11-02"><td>US off-premise wine $, 4 wks to 24 Oct</td><td class="n neg">−3.8%</td><td>NielsenIQ · <a href="https://wineindustryadvisor.com/2026/11/02/seasonal-demand-contributes-to-some-relief-as-four-week-declines-persist-nielseniq/">Wine Industry Advisor</a></td></tr>
-      <tr data-date="2026-11-02"><td>US off-premise wine volume, same period</td><td class="n neg">−5.3%</td><td>NielsenIQ · Wine Industry Advisor</td></tr>
-      <tr data-date="2026-11-02"><td>Sparkling wine $, same period</td><td class="n pos">+1.5%</td><td>NielsenIQ · Wine Industry Advisor</td></tr>
-      <tr data-date="2026-11-02"><td>Non-alc wine $, same period</td><td class="n pos">+18.4%</td><td>NielsenIQ · Wine Industry Advisor</td></tr>
-      <tr data-date="2026-11-01"><td>Control-state spirits volume, Sept</td><td class="n pos">+3.2%</td><td>NABCA · <a href="https://www.thespiritsbusiness.com/2026/11/control-state-spirits-sales-back-in-growth/">The Spirits Business</a></td></tr>
-      <tr data-date="2026-11-01"><td>Control-state spirits, 12 mo to Sept (vol / value)</td><td class="n neg">−0.6% / −2.7%</td><td>NABCA · The Spirits Business</td></tr>
-      <tr data-date="2026-10-29"><td>AB InBev US Q3: revenue / sales-to-retailers / EBITDA</td><td class="n neg">−1.2% / −3.1% / −4.0%</td><td>AB InBev Q3 release · <a href="https://app.bigdata.com/documents/3E83173250B26B8031F090EB3F7EDFB3">via Bigdata.com</a></td></tr>
-      <tr data-date="2026-10-30"><td>US spirits exports to Canada, before vs. during ban</td><td class="n neg">$232M → $72M</td><td>DISCUS · <a href="https://bnnbloomberg.ca/tariffs/2026/10/30/ctv-news-went-to-kentucky-to-see-if-canadas-bourbon-bans-are-hurting-them-their-response-was-blunt">BNN Bloomberg</a></td></tr>
-      <tr data-date="2026-10-30"><td>US spirits imports, 2022 peak vs. 2025</td><td class="n neg">$12.1B → $8.4B</td><td>DISCUS · <a href="https://app.bigdata.com/documents/64EF51804C7A554E0095F966EA04EE44">The Spirits Business</a></td></tr>
-      <tr data-date="2026-10-29"><td>Adults 21+ who want DtC spirits shipping expanded</td><td class="n">68%</td><td>Sovos ShipCompliant / ACSA (Harris Poll) · <a href="https://app.bigdata.com/documents/5AFF0E9F9DD77535EEC3443764DBBF51">The Spirits Business</a></td></tr>
-      <tr data-date="2026-10-27"><td>US adults who drink alcohol</td><td class="n">54%</td><td>Gallup (Aug 2026), ties record low · multiple</td></tr>
-      <tr data-date="2026-10-28"><td>Alcohol spend in GLP-1 households after 2 yrs (all / beer)</td><td class="n neg">−7% / −13.5%</td><td>Circana · <a href="https://app.bigdata.com/documents/62B6A520E010895975ED3D09103C4BFF">Reuters</a></td></tr>
+      <tr><td>US off-premise wine $, 4 wks to 24 Oct</td><td class="n neg">−3.8%</td><td>NielsenIQ · <a href="https://wineindustryadvisor.com/2026/11/02/seasonal-demand-contributes-to-some-relief-as-four-week-declines-persist-nielseniq/">Wine Industry Advisor</a></td></tr>
+      <tr><td>US off-premise wine volume, same period</td><td class="n neg">−5.3%</td><td>NielsenIQ · Wine Industry Advisor</td></tr>
+      <tr><td>Sparkling wine $, same period</td><td class="n pos">+1.5%</td><td>NielsenIQ · Wine Industry Advisor</td></tr>
+      <tr><td>Non-alc wine $, same period</td><td class="n pos">+18.4%</td><td>NielsenIQ · Wine Industry Advisor</td></tr>
+      <tr><td>Control-state spirits volume, Sept</td><td class="n pos">+3.2%</td><td>NABCA · <a href="https://www.thespiritsbusiness.com/2026/11/control-state-spirits-sales-back-in-growth/">The Spirits Business</a></td></tr>
+      <tr><td>Control-state spirits, 12 mo to Sept (vol / value)</td><td class="n neg">−0.6% / −2.7%</td><td>NABCA · The Spirits Business</td></tr>
+      <tr><td>AB InBev US Q3: revenue / sales-to-retailers / EBITDA</td><td class="n neg">−1.2% / −3.1% / −4.0%</td><td>AB InBev Q3 release · <a href="https://app.bigdata.com/documents/3E83173250B26B8031F090EB3F7EDFB3">via Bigdata.com</a></td></tr>
+      <tr><td>US spirits exports to Canada, before vs. during ban</td><td class="n neg">$232M → $72M</td><td>DISCUS · <a href="https://bnnbloomberg.ca/tariffs/2026/10/30/ctv-news-went-to-kentucky-to-see-if-canadas-bourbon-bans-are-hurting-them-their-response-was-blunt">BNN Bloomberg</a></td></tr>
+      <tr><td>US spirits imports, 2022 peak vs. 2025</td><td class="n neg">$12.1B → $8.4B</td><td>DISCUS · <a href="https://app.bigdata.com/documents/64EF51804C7A554E0095F966EA04EE44">The Spirits Business</a></td></tr>
+      <tr><td>Adults 21+ who want DtC spirits shipping expanded</td><td class="n">68%</td><td>Sovos ShipCompliant / ACSA (Harris Poll) · <a href="https://app.bigdata.com/documents/5AFF0E9F9DD77535EEC3443764DBBF51">The Spirits Business</a></td></tr>
+      <tr><td>US adults who drink alcohol</td><td class="n">54%</td><td>Gallup (Aug 2026), ties record low · multiple</td></tr>
+      <tr><td>Alcohol spend in GLP-1 households after 2 yrs (all / beer)</td><td class="n neg">−7% / −13.5%</td><td>Circana · <a href="https://app.bigdata.com/documents/62B6A520E010895975ED3D09103C4BFF">Reuters</a></td></tr>
     </tbody>
   </table></div>
 </section>
@@ -218,10 +202,9 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 <!-- DISTRIBUTION -->
 <section id="dist">
   <h2>Distribution &amp; three-tier</h2>
-  <p class="empty" hidden>Nothing in this section for the selected timeframe.</p>
   <p class="secnote">Reyes/Bacardi, the RNDC wind-down and Constellation v. Coors are covered in the Top 5.</p>
 
-  <article class="item" data-tier="T3" data-date="2026-11-02" data-src="bevnet">
+  <article class="item" data-tier="T3" data-src="bevnet">
     <span class="stripe"></span><div>
     <h3>Owen's makes national retail push with Southern Glazer's and MGK</h3>
     <div class="meta"><span class="tier">T3</span><span>BevNET</span><span>2 Nov</span><span class="flag">HEADLINE ONLY</span><span class="newsrc">NEW SOURCE</span></div>
@@ -231,7 +214,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T1b" data-date="2026-10-29" data-src="tilray brewbound">
+  <article class="item" data-tier="T1b" data-src="tilray brewbound">
     <span class="stripe"></span><div>
     <h3>Tilray to consolidate its US beer distributor network; cuts to 6 breweries</h3>
     <div class="meta"><span class="tier">T1b</span><span>Tilray release · Brewbound</span><span>29 Oct</span><span class="newsrc">NEW SOURCE</span></div>
@@ -241,7 +224,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T3" data-date="2026-10-28" data-src="brewbound">
+  <article class="item" data-tier="T3" data-src="brewbound">
     <span class="stripe"></span><div>
     <h3>Goldman Sachs: c-store operators upbeat on beer to close 2026; craft to lose shelf space to RTDs in 2027</h3>
     <div class="meta"><span class="tier">T3</span><span>Brewbound</span><span>late Oct</span><span class="flag">HEADLINE ONLY</span><span class="newsrc">NEW SOURCE</span></div>
@@ -255,9 +238,8 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 <!-- REGULATORY -->
 <section id="reg">
   <h2>Regulatory &amp; trade</h2>
-  <p class="empty" hidden>Nothing in this section for the selected timeframe.</p>
 
-  <article class="item" data-tier="T1" data-date="2026-10-30" data-src="discus thespiritsbusiness bnnbloomberg">
+  <article class="item" data-tier="T1" data-src="discus thespiritsbusiness bnnbloomberg">
     <span class="stripe"></span><div>
     <h3>DISCUS: Canada has fallen from #2 to #6 export market for US spirits; council presses for permanent zero-for-zero tariffs</h3>
     <div class="meta"><span class="tier">T1 → T3</span><span>DISCUS via The Spirits Business</span><span>30 Oct</span></div>
@@ -267,7 +249,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T1" data-date="2026-11-03" data-src="sawine">
+  <article class="item" data-tier="T1" data-src="sawine">
     <span class="stripe"></span><div>
     <h3>US to end South Africa's AGOA trade preferences 1 Jan 2027; SA wine tariff approaches ~16%</h3>
     <div class="meta"><span class="tier">T1</span><span>South Africa Wine statement</span><span>3 Nov</span><span class="newsrc">NEW SOURCE</span></div>
@@ -277,7 +259,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T1" data-date="2026-10-28" data-src="gpi">
+  <article class="item" data-tier="T1" data-src="gpi">
     <span class="stripe"></span><div>
     <h3>Glass Packaging Institute warns 50% Section 338 tariff on Canadian glass hits US wine and spirits supply</h3>
     <div class="meta"><span class="tier">T1</span><span>GPI statement</span><span>28 Oct</span><span class="newsrc">NEW SOURCE</span></div>
@@ -287,7 +269,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T1" data-date="2026-10-29" data-src="sovos acsa thespiritsbusiness thedrinksbusiness">
+  <article class="item" data-tier="T1" data-src="sovos acsa thespiritsbusiness thedrinksbusiness">
     <span class="stripe"></span><div>
     <h3>DtC spirits shipping: 68% of adults want it expanded; California's law expires at year-end</h3>
     <div class="meta"><span class="tier">T1</span><span>Sovos ShipCompliant / ACSA · The Spirits Business · Drinks Business</span><span>28–29 Oct</span></div>
@@ -297,7 +279,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T2" data-date="2026-11-03" data-src="local3news wect">
+  <article class="item" data-tier="T2" data-src="local3news wect">
     <span class="stripe"></span><div>
     <h3>Election Day local-option votes: Meigs County, TN and Columbus County, NC</h3>
     <div class="meta"><span class="tier">T2</span><span>Local 3 News · WECT</span><span>3 Nov</span><span class="newsrc">NEW SOURCE</span></div>
@@ -311,9 +293,8 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 <!-- SPIRITS -->
 <section id="spirits">
   <h2>Spirits</h2>
-  <p class="empty" hidden>Nothing in this section for the selected timeframe.</p>
 
-  <article class="item" data-tier="T3" data-date="2026-11-01" data-src="nabca thespiritsbusiness">
+  <article class="item" data-tier="T3" data-src="nabca thespiritsbusiness">
     <span class="stripe"></span><div>
     <h3>Control-state spirits back in growth in September, led by RTDs</h3>
     <div class="meta"><span class="tier">T1 → T3</span><span>NABCA via The Spirits Business</span><span>early Nov</span></div>
@@ -325,7 +306,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 
 
 
-  <article class="item" data-tier="T3" data-date="2026-11-02" data-src="shankennewsdaily">
+  <article class="item" data-tier="T3" data-src="shankennewsdaily">
     <span class="stripe"></span><div>
     <h3>Sazerac's Svedka returns to the Super Bowl with a fan-made ad and a $500,000 prize</h3>
     <div class="meta"><span class="tier">T3</span><span>Shanken News Daily</span><span>2 Nov</span><span class="flag">HEADLINE ONLY</span></div>
@@ -338,9 +319,8 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 <!-- WINE -->
 <section id="wine">
   <h2>Wine</h2>
-  <p class="empty" hidden>Nothing in this section for the selected timeframe.</p>
 
-  <article class="item" data-tier="T3" data-date="2026-11-02" data-src="nielseniq wineindustryadvisor">
+  <article class="item" data-tier="T3" data-src="nielseniq wineindustryadvisor">
     <span class="stripe"></span><div>
     <h3>NielsenIQ: wine declines continue despite seasonal lift; sparkling and non-alc grow</h3>
     <div class="meta"><span class="tier">T1 → T3</span><span>NielsenIQ via Wine Industry Advisor</span><span>2 Nov</span><span class="newsrc">NEW SOURCE</span></div>
@@ -350,7 +330,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T1b" data-date="2026-11-03" data-src="oeneo">
+  <article class="item" data-tier="T1b" data-src="oeneo">
     <span class="stripe"></span><div>
     <h3>Cooperage maker Oeneo: barrel sales down 15.8% in the half, citing the US and Cognac</h3>
     <div class="meta"><span class="tier">T1b</span><span>Oeneo H1 release</span><span>3 Nov</span><span class="newsrc">NEW SOURCE</span></div>
@@ -364,9 +344,8 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 <!-- BEER & RTD -->
 <section id="beer">
   <h2>Beer &amp; RTD</h2>
-  <p class="empty" hidden>Nothing in this section for the selected timeframe.</p>
 
-  <article class="item" data-tier="T2" data-date="2026-11-04" data-src="wweek oregonlive bevnet">
+  <article class="item" data-tier="T2" data-src="wweek oregonlive bevnet">
     <span class="stripe"></span><div>
     <h3>Sazerac buys Oregon's Full Sail Brewing for RTD production capacity</h3>
     <div class="meta"><span class="tier">T2</span><span>Willamette Week · The Oregonian · BevNET</span><span>3–4 Nov</span><span class="newsrc">NEW SOURCE</span></div>
@@ -376,7 +355,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T1b" data-date="2026-10-29" data-src="ab-inbev">
+  <article class="item" data-tier="T1b" data-src="ab-inbev">
     <span class="stripe"></span><div>
     <h3>AB InBev Q3: US revenue −1.2%, sales-to-retailers −3.1% "outperformed a soft industry"</h3>
     <div class="meta"><span class="tier">T1b</span><span>AB InBev Q3 release</span><span>29 Oct</span><span class="newsrc">NEW SOURCE</span></div>
@@ -385,7 +364,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T3" data-date="2026-11-03" data-src="bevnet brewbound">
+  <article class="item" data-tier="T3" data-src="bevnet brewbound">
     <span class="stripe"></span><div>
     <h3>RTD launches: Stateside adds Playa Vida tequila RTD; Mark Anthony pushes into hard sports drinks</h3>
     <div class="meta"><span class="tier">T3</span><span>BevNET · Brewbound</span><span>late Oct – 3 Nov</span><span class="flag">HEADLINE ONLY</span><span class="newsrc">NEW SOURCE</span></div>
@@ -394,7 +373,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T2" data-date="2026-10-28" data-src="reuters circana">
+  <article class="item" data-tier="T2" data-src="reuters circana">
     <span class="stripe"></span><div>
     <h3>Heineken tells pubs to prepare for GLP-1 drugs: smaller pours, more non-alc</h3>
     <div class="meta"><span class="tier">T2</span><span>Reuters (syndicated)</span><span>28 Oct</span></div>
@@ -407,10 +386,9 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 <!-- AWARDS -->
 <section id="awards">
   <h2>Awards &amp; rankings</h2>
-  <p class="empty" hidden>Nothing in this section for the selected timeframe.</p>
   <p class="secnote">Competitions, critics' lists and brand rankings. These help suppliers market brands and give retailers reasons to feature products.</p>
 
-  <article class="item" data-tier="T3" data-date="2026-11-01" data-src="thedrinksbusiness">
+  <article class="item" data-tier="T3" data-src="thedrinksbusiness">
     <span class="stripe"></span><div>
     <h3>James Suckling names Château de Beaucastel "World's Best Wine of 2026"</h3>
     <div class="meta"><span class="tier">T3</span><span>The Drinks Business</span><span>early Nov</span><span class="flag">HEADLINE ONLY</span></div>
@@ -420,7 +398,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T3" data-date="2026-11-03" data-src="wineindustryadvisor">
+  <article class="item" data-tier="T3" data-src="wineindustryadvisor">
     <span class="stripe"></span><div>
     <h3>Michigan Wine Collaborative named best regional wine-industry support organization (USA)</h3>
     <div class="meta"><span class="tier">T3</span><span>Wine Industry Advisor</span><span>3 Nov</span></div>
@@ -429,7 +407,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
     </div>
   </article>
 
-  <article class="item" data-tier="T3" data-date="2026-11-01" data-src="thespiritsbusiness">
+  <article class="item" data-tier="T3" data-src="thespiritsbusiness">
     <span class="stripe"></span><div>
     <h3>Hennessy MyWay 2026: Toronto's Sébastien Lagrange wins global bartender title</h3>
     <div class="meta"><span class="tier">T3</span><span>The Spirits Business</span><span>early Nov</span><span class="flag">HEADLINE ONLY</span></div>
@@ -442,10 +420,9 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 <!-- NA & HEMP -->
 <section id="na">
   <h2>Non-alc &amp; hemp-THC</h2>
-  <p class="empty" hidden>Nothing in this section for the selected timeframe.</p>
   <p class="secnote">The hemp-THC deadlines are covered in the Top 5. This section only includes non-alc beer, wine and spirits; soft drinks and juice are excluded.</p>
 
-  <article class="item" data-tier="T1" data-date="2026-10-29" data-src="gallup nielseniq bevnet">
+  <article class="item" data-tier="T1" data-src="gallup nielseniq bevnet">
     <span class="stripe"></span><div>
     <h3>Gallup: 17% of adults chose a non-alc beer, wine or spirit instead of alcohol in the past year</h3>
     <div class="meta"><span class="tier">T1</span><span>Gallup (Aug 2026), cited across outlets this week</span></div>
@@ -487,93 +464,6 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
 
 <script>
 (function(){
-  var TRIGGER='trig_01AQhRmjgTjtjGt45rt4HLK3';
-  var LABELS={today:'Today',yesterday:'Yesterday','7d':'Last 7 days',month:'This month',lastmonth:'Last month'};
-  var sel=document.getElementById('tf'), out=document.getElementById('tfstatus'), btn=document.getElementById('tfbuild');
-  var db=null, user=null, mcp=null, coverage=[], runs={}, firing=false;
-  function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
-  function todayIso(){return iso(new Date());}
-  function range(v){
-    var now=new Date(), t=new Date(now.getFullYear(),now.getMonth(),now.getDate()), day=864e5;
-    if(v==='today') return [iso(t),iso(t)];
-    if(v==='yesterday'){var y=new Date(t-day); return [iso(y),iso(y)];}
-    if(v==='7d') return [iso(new Date(t-6*day)),iso(t)];
-    if(v==='month') return [iso(new Date(t.getFullYear(),t.getMonth(),1)),iso(t)];
-    return [iso(new Date(t.getFullYear(),t.getMonth()-1,1)),iso(new Date(t.getFullYear(),t.getMonth(),0))];
-  }
-  function runId(v){return v+'-'+todayIso();}
-  function filter(){
-    var r=range(sel.value);
-    [].slice.call(document.querySelectorAll('[data-date]')).forEach(function(el){var d=el.dataset.date; el.hidden=!(d>=r[0]&&d<=r[1]);});
-    [].slice.call(document.querySelectorAll('section')).forEach(function(s){
-      var e=s.querySelector(':scope > .empty'); if(!e) return;
-      e.hidden=!(s.querySelectorAll('[data-date]').length && !s.querySelectorAll('[data-date]:not([hidden])').length);
-    });
-    document.dispatchEvent(new Event('brief:timeframe'));
-  }
-  /* A day counts as built when a coverage range includes it; today also needs a build in the last 3 hours. */
-  function covered(r){
-    var today=todayIso(), d=new Date(r[0]+'T12:00:00'), end=new Date(r[1]+'T12:00:00');
-    for(;d<=end;d=new Date(d.getTime()+864e5)){
-      var k=iso(d), ok=coverage.some(function(c){
-        if(!(k>=c.start&&k<=c.end)) return false;
-        if(k===today) return (Date.now()-Date.parse(c.builtAt))<3*36e5;
-        return true;
-      });
-      if(!ok) return false;
-    }
-    return true;
-  }
-  function ago(ts){var m=Math.max(0,Math.round((Date.now()-Date.parse(ts))/6e4)); return m<1?'just now':m===1?'1 minute ago':m<60?m+' minutes ago':Math.round(m/60)+' h ago';}
-  function say(text,showBtn){out.textContent=text; btn.hidden=!showBtn;}
-  function status(){
-    var v=sel.value, label=LABELS[v], run=runs[runId(v)];
-    if(!db){say('Showing items already collected for '+label+'.',false); return;}
-    if(run && (run.status==='requested'||run.status==='running') && (Date.now()-Date.parse(run.requestedAt))<90*6e4){
-      say('Updating '+label+' (started '+ago(run.requestedAt)+'). This usually takes 10 to 30 minutes, and the page reloads by itself when it finishes.',false); return;}
-    if(run && run.status==='failed'){say('The last update for '+label+' failed: '+(run.error||'no reason given')+'.',isOwner()); return;}
-    if(covered(range(v))){say(label+' is up to date.',isOwner()); btn.textContent='Update again'; return;}
-    if(!isOwner()){say('Showing items already collected for '+label+'. Only the page owner can start an update.',false); return;}
-    if(!mcp){say('Showing items already collected for '+label+'. Updates can only be started from this page inside Claude.',false); return;}
-    btn.textContent='Update '+label; say('Some days in '+label+' haven\'t been built yet.',true);
-  }
-  function isOwner(){try{return !!(user && user.isOwner());}catch(e){return false;}}
-  function start(force){
-    var v=sel.value, r=range(v), id=runId(v);
-    if(firing||!db||!mcp||!isOwner()) {status(); return;}
-    if(!force && covered(r)) {status(); return;}
-    var run=runs[id];
-    if(run && (run.status==='requested'||run.status==='running') && (Date.now()-Date.parse(run.requestedAt))<90*6e4){status(); return;}
-    firing=true; say('Starting the '+LABELS[v]+' update…',false);
-    var req={timeframe:v,label:LABELS[v],start:r[0],end:r[1],runId:id,force:!!force};
-    mcp.callTool('Claude Code Remote','fire_trigger',{trigger_id:TRIGGER,text:'Run request: '+JSON.stringify(req)})
-      .then(function(){
-        return db.collection('runs').doc(id).set({timeframe:v,label:LABELS[v],start:r[0],end:r[1],status:'requested',requestedAt:new Date().toISOString()});
-      })
-      .then(function(){firing=false; status();})
-      .catch(function(e){
-        firing=false; var c=e&&e.code;
-        if(c==='server_not_connected'||c==='needs_reauth') say('Connect Claude Code Remote in claude.ai Settings → Connectors to start updates from this page.',false);
-        else if(c==='not_in_manifest'||c==='approval_required') say('Updates need your approval for this page to use Claude Code Remote. Select the button to try again.',true);
-        else if(c==='tool_error') say('The update couldn\'t start: '+(e.message||'the scheduled task refused it')+'.',true);
-        else say('The update may not have started. Check again in a few minutes before retrying.',true);
-      });
-  }
-  sel.addEventListener('change',function(){filter(); start(false);});
-  btn.addEventListener('click',function(){start(true);});
-  filter(); status();
-  if(!window.claude||!window.claude.use) return;
-  Promise.all([window.claude.use('db'),window.claude.use('user'),window.claude.use('mcp')]).then(function(r){
-    db=r[0]; user=r[1]; mcp=r[2];
-    if(!db){status(); return;}
-    db.doc('meta/coverage').onSnapshot(function(s){coverage=(s.exists&&s.data().ranges)||[]; status();},function(){status();});
-    db.collection('runs').onSnapshot(function(s){runs={}; s.docs.forEach(function(d){runs[d.id]=d.data();}); status();},function(){status();});
-    status();
-  });
-})();
-</script>
-<script>
-(function(){
   var SOURCES=[{"k": "thespiritsbusiness", "n": "The Spirits Business", "d": "thespiritsbusiness.com", "t": "T3", "c": 5, "g": "pub", "l": 1}, {"k": "bevnet", "n": "BevNET", "d": "bevnet.com", "t": "T3", "c": 7, "g": "pub", "l": 1}, {"k": "brewbound", "n": "Brewbound", "d": "brewbound.com", "t": "T3", "c": 3, "g": "pub", "l": 1}, {"k": "thedrinksbusiness", "n": "The Drinks Business", "d": "thedrinksbusiness.com", "t": "T3", "c": 2, "g": "pub", "l": 1}, {"k": "wineindustryadvisor", "n": "Wine Industry Advisor", "d": "wineindustryadvisor.com", "t": "T3", "c": 2, "g": "pub", "l": 1}, {"k": "shankennewsdaily", "n": "Shanken News Daily", "d": "shankennewsdaily.com", "t": "T3", "c": 1, "g": "pub", "l": 1}, {"k": "cspdailynews", "n": "CSP Daily News", "d": "cspdailynews.com", "t": "T3", "c": 1, "g": "pub", "l": 1}, {"k": "jdsupra", "n": "JD Supra", "d": "jdsupra.com", "t": "T3", "c": 1, "g": "pub", "l": 1}, {"k": "cnn", "n": "CNN", "d": "cnn.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "forbes", "n": "Forbes", "d": "forbes.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "reuters", "n": "Reuters", "d": "reuters.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "denverpost", "n": "Denver Post", "d": "denverpost.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "law360", "n": "Law360", "d": "law360.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "bnnbloomberg", "n": "BNN Bloomberg", "d": "bnnbloomberg.ca", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "wweek", "n": "Willamette Week", "d": "wweek.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "oregonlive", "n": "The Oregonian", "d": "oregonlive.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "nj1015", "n": "New Jersey 101.5", "d": "nj1015.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "local3news", "n": "Local 3 News", "d": "local3news.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "wect", "n": "WECT", "d": "wect.com", "t": "T2", "c": 1, "g": "pub", "l": 1}, {"k": "discus", "n": "DISCUS", "d": "distilledspirits.org", "t": "T1", "c": 2, "g": "org", "l": 1}, {"k": "nielseniq", "n": "NielsenIQ", "d": "nielseniq.com", "t": "T1", "c": 2, "g": "org", "l": 1}, {"k": "circana", "n": "Circana", "d": "circana.com", "t": "T1", "c": 2, "g": "org", "l": 1}, {"k": "nabca", "n": "NABCA", "d": "nabca.org", "t": "T1", "c": 1, "g": "org", "l": 1}, {"k": "gallup", "n": "Gallup", "d": "gallup.com", "t": "T1", "c": 1, "g": "org", "l": 1}, {"k": "gpi", "n": "Glass Packaging Institute", "d": "gpi.org", "t": "T1", "c": 1, "g": "org", "l": 1}, {"k": "acsa", "n": "American Craft Spirits Association", "d": "americancraftspirits.org", "t": "T1", "c": 1, "g": "org", "l": 1}, {"k": "sawine", "n": "South Africa Wine", "d": "", "t": "T1", "c": 1, "g": "org", "l": 0}, {"k": "ab-inbev", "n": "AB InBev", "d": "ab-inbev.com", "t": "T1b", "c": 2, "g": "co", "l": 0}, {"k": "bacardi", "n": "Bacardi", "d": "bacardilimited.com", "t": "T1b", "c": 1, "g": "co", "l": 0}, {"k": "tilray", "n": "Tilray", "d": "tilray.com", "t": "T1b", "c": 1, "g": "co", "l": 0}, {"k": "oeneo", "n": "Oeneo", "d": "oeneo.com", "t": "T1b", "c": 1, "g": "co", "l": 0}, {"k": "sovos", "n": "Sovos ShipCompliant", "d": "sovos.com", "t": "T1b", "c": 1, "g": "co", "l": 0}];
   var GROUPS=[["pub","Publishers"],["org","Organizations & data owners"],["co","Company releases"]];
   var ICON='<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="3.6" y1="12.4" x2="12.4" y2="3.6" stroke="currentColor" stroke-width="1.5"/></svg>';
@@ -590,9 +480,9 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
   function render(){
     recount();
     var shown=SOURCES.filter(function(s){return (counts[s.k]||0)>0;}).length;
-    document.getElementById('srccount').textContent=shown+(shown===1?' source':' sources')+' in this timeframe';
+    document.getElementById('srccount').textContent=shown+(shown===1?' source':' sources')+' in this issue';
     root.textContent='';
-    if(!shown){var e=document.createElement('p'); e.className='empty'; e.textContent='No sources for the selected timeframe.'; root.appendChild(e);}
+    if(!shown){var e=document.createElement('p'); e.className='empty'; e.textContent='No sources in this issue.'; root.appendChild(e);}
     GROUPS.forEach(function(g){
       var list=SOURCES.filter(function(s){return s.g===g[0] && (counts[s.k]||0)>0;});
       if(!list.length) return;
@@ -631,7 +521,6 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:70ch}
        else status.textContent='That block didn\'t save. Try again in a moment.';
        render();});
   }
-  document.addEventListener('brief:timeframe',render);
   render();
   if(!window.claude||!window.claude.use){status.textContent='Blocking isn\'t available in this view. Tell Claude which sources to block instead.';return;}
   Promise.all([window.claude.use('db'),window.claude.use('user')]).then(function(r){
