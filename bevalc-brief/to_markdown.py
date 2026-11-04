@@ -17,6 +17,8 @@ def text(fragment):
 
 def main(src, dst):
     page = open(src, encoding="utf-8").read()
+    m = re.search(r"(\d{4}-\d{2}-\d{2})", dst.rsplit("/", 1)[-1])
+    edition = m.group(1) if m else None
     title = text(re.search(r"<h1>(.*?)</h1>", page, re.S).group(1))
     eyebrow = text(re.search(r'<div class="eyebrow">(.*?)</div>', page, re.S).group(1))
     out = [f"# {title}", "", f"_{eyebrow}_", ""]
@@ -33,9 +35,11 @@ def main(src, dst):
         if note:
             out += [f"_{text(note.group(1))}_", ""]
 
-        for item in re.finditer(r'<article class="item"[^>]*>(.*?)</article>', body, re.S):
-            a = item.group(1)
-            out.append(f"### {text(re.search(r'<h3>(.*?)</h3>', a, re.S).group(1))}")
+        for item in re.finditer(r'<article class="item"([^>]*)>(.*?)</article>', body, re.S):
+            attrs, a = item.groups()
+            added = re.search(r'data-added="([^"]+)"', attrs)
+            tag = "**NEW TODAY** " if edition and added and added.group(1) == edition else ""
+            out.append(f"### {tag}{text(re.search(r'<h3>(.*?)</h3>', a, re.S).group(1))}")
             meta = re.search(r'<div class="meta">(.*?)</div>', a, re.S)
             if meta:
                 parts = [text(s) for s in re.findall(r"<span[^>]*>(.*?)</span>", meta.group(1), re.S)]
