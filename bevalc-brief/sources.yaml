@@ -123,6 +123,12 @@ allow:
   - {domain: sovos.com, name: Sovos ShipCompliant, tier: T1b, added: 2026-11-04, note: "Appeared as a new source in the 4 Nov sample; not blocked by the next brief, so moved to allow per the pending rule"}
   - {domain: sawine.co.za, name: South Africa Wine, tier: T1, added: 2026-11-04, note: "Appeared as a new source in the 4 Nov sample; not blocked by the next brief, so moved to allow per the pending rule"}
 
+  - {domain: engineeringnews.co.za, name: Engineering News, tier: T2, added: 2026-11-04, note: "South African business news, English-language. First used in the 3 Nov edition. Not blocked by the 4 Nov run, so moved to allow per the pending rule"}
+
+  - {domain: publicradioeast.org, name: Public Radio East, tier: T2, added: 2026-11-04, note: "Public radio newsroom, eastern NC. First used in the 3 Nov edition. Not blocked by the 4 Nov run, so moved to allow per the pending rule"}
+
+  - {domain: mswalker.com, name: M.S. Walker, tier: T1b, added: 2026-11-04, note: "Importer/distributor release (Amaro Alpino). First used in the 3 Nov edition. Not blocked by the 4 Nov run, so moved to allow per the pending rule"}
+
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
   # blogs came up in research for the sample issue.
@@ -150,9 +156,9 @@ block:
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
   # suggested: allow|block, Claude's recommendation for you to confirm.
-  - {domain: engineeringnews.co.za, name: Engineering News, tier: T2, added: 2026-11-03, suggested: allow, note: "South African business news, English-language. First used in the 3 Nov edition"}
-  - {domain: publicradioeast.org, name: Public Radio East, tier: T2, added: 2026-11-03, suggested: allow, note: "Public radio newsroom, eastern NC. First used in the 3 Nov edition"}
-  - {domain: mswalker.com, name: M.S. Walker, tier: T1b, added: 2026-11-03, suggested: allow, note: "Importer/distributor release (Amaro Alpino). First used in the 3 Nov edition"}
+  - {domain: wwaytv3.com, name: WWAY (Wilmington NC), tier: T2, added: 2026-11-04, suggested: allow, note: "TV station newsroom. First used in the 4 Nov update"}
+  - {domain: distributionstrategy.com, name: Distribution Strategy Group, tier: T3, added: 2026-11-04, suggested: allow, note: "Distribution industry trade site. First used in the 4 Nov update"}
+  - {domain: marijuanamoment.net, name: Marijuana Moment, tier: T3, added: 2026-11-04, suggested: allow, note: "Cannabis policy trade news; used to carry Politico reporting (politico.com blocks search). First used in the 4 Nov update"}
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
