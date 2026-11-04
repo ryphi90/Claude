@@ -1,0 +1,138 @@
+# Bev-Alc Morning Brief: source lists
+#
+# This file controls which sources the daily brief may use. It changes whenever
+# you give feedback ("block X", "allow Y", "make Z tier 2").
+#
+#   allow    Use freely. The tier sets ranking and the label on each item.
+#   block    Never use. Matching items are dropped and counted under "Left out".
+#   pending  Sources that appeared in a brief but have no decision yet. They are
+#            used only if the item passes the content rules, and the brief
+#            flags them as "New source" so you can allow or block them.
+#   syndicators  Republishers (AOL, Yahoo, MSN...). Never credited as a source:
+#            the brief resolves the item to the original publisher and applies
+#            that publisher's list status.
+#
+# Tiers: T1 data and official bodies · T1b company releases and filings ·
+#        T2 general and business press · T3 trade press with sourced reporting
+#
+# Matching is by domain, and a subdomain matches its parent (news.example.com
+# matches example.com). Entry fields: domain, name, tier (allow and pending
+# only), added (date), note (why it is on the list; feedback is quoted here).
+#
+# Content rules apply on top of these lists. Even an allowed source has its
+# reviews, recipes, gift guides, sponsored posts and awards coverage dropped.
+
+allow:
+  # T1: trade groups, regional bodies, regulators, data owners
+  - {domain: distilledspirits.org, name: DISCUS, tier: T1, added: 2026-11-04, note: "Named in original brief"}
+  - {domain: wswa.org, name: Wine & Spirits Wholesalers of America, tier: T1, added: 2026-11-04, note: "Named in original brief; includes SipSource"}
+  - {domain: sipsource.com, name: SipSource, tier: T1, added: 2026-11-04, note: "WSWA depletion data"}
+  - {domain: champagne.fr, name: Comité Champagne, tier: T1, added: 2026-11-04, note: "Named in original brief"}
+  - {domain: napavintners.com, name: Napa Valley Vintners, tier: T1, added: 2026-11-04, note: "Named in original brief"}
+  - {domain: nielseniq.com, name: NielsenIQ, tier: T1, added: 2026-11-04, note: "Named in original brief"}
+  - {domain: circana.com, name: Circana, tier: T1, added: 2026-11-04}
+  - {domain: theiwsr.com, name: IWSR, tier: T1, added: 2026-11-04}
+  - {domain: nabca.org, name: NABCA, tier: T1, added: 2026-11-04, note: "Control-state data"}
+  - {domain: beerinstitute.org, name: Beer Institute, tier: T1, added: 2026-11-04}
+  - {domain: brewersassociation.org, name: Brewers Association, tier: T1, added: 2026-11-04}
+  - {domain: nbwa.org, name: National Beer Wholesalers Association, tier: T1, added: 2026-11-04}
+  - {domain: wineinstitute.org, name: Wine Institute, tier: T1, added: 2026-11-04}
+  - {domain: americancraftspirits.org, name: American Craft Spirits Association, tier: T1, added: 2026-11-04}
+  - {domain: kydistillers.org, name: Kentucky Distillers' Association, tier: T1, added: 2026-11-04}
+  - {domain: scotch-whisky.org.uk, name: Scotch Whisky Association, tier: T1, added: 2026-11-04}
+  - {domain: cognac.fr, name: BNIC (Cognac), tier: T1, added: 2026-11-04}
+  - {domain: oiv.int, name: OIV, tier: T1, added: 2026-11-04}
+  - {domain: ttb.gov, name: TTB, tier: T1, added: 2026-11-04}
+  - {domain: ustr.gov, name: USTR, tier: T1, added: 2026-11-04}
+  - {domain: federalregister.gov, name: Federal Register, tier: T1, added: 2026-11-04}
+  - {domain: congress.gov, name: Congress.gov, tier: T1, added: 2026-11-04}
+  - {domain: justice.gov, name: US Department of Justice, tier: T1, added: 2026-11-04}
+  - {domain: census.gov, name: US Census Bureau (trade data), tier: T1, added: 2026-11-04}
+  - {domain: gallup.com, name: Gallup, tier: T1, added: 2026-11-04}
+
+  # T1b: company releases and filings (the original, not wire copies)
+  - {domain: sec.gov, name: SEC EDGAR, tier: T1b, added: 2026-11-04}
+  - {domain: prnewswire.com, name: PR Newswire, tier: T1b, added: 2026-11-04, note: "Company releases only; cite the company, not the wire"}
+  - {domain: businesswire.com, name: Business Wire, tier: T1b, added: 2026-11-04, note: "Company releases only; cite the company, not the wire"}
+  - {domain: globenewswire.com, name: GlobeNewswire, tier: T1b, added: 2026-11-04, note: "Company releases only; cite the company, not the wire"}
+
+  # T2: general and business press
+  - {domain: wsj.com, name: Wall Street Journal, tier: T2, added: 2026-11-04}
+  - {domain: ft.com, name: Financial Times, tier: T2, added: 2026-11-04}
+  - {domain: bloomberg.com, name: Bloomberg, tier: T2, added: 2026-11-04}
+  - {domain: reuters.com, name: Reuters, tier: T2, added: 2026-11-04}
+  - {domain: apnews.com, name: Associated Press, tier: T2, added: 2026-11-04}
+  - {domain: nytimes.com, name: New York Times, tier: T2, added: 2026-11-04}
+  - {domain: washingtonpost.com, name: Washington Post, tier: T2, added: 2026-11-04}
+  - {domain: cnbc.com, name: CNBC, tier: T2, added: 2026-11-04}
+  - {domain: cnn.com, name: CNN, tier: T2, added: 2026-11-04}
+  - {domain: npr.org, name: NPR, tier: T2, added: 2026-11-04}
+  - {domain: pbs.org, name: PBS NewsHour, tier: T2, added: 2026-11-04}
+  - {domain: bbc.com, name: BBC, tier: T2, added: 2026-11-04}
+  - {domain: forbes.com, name: Forbes, tier: T2, added: 2026-11-04, note: "Staff reporting only; contributor posts need judgment"}
+  - {domain: bizjournals.com, name: American City Business Journals, tier: T2, added: 2026-11-04}
+  - {domain: sfchronicle.com, name: San Francisco Chronicle, tier: T2, added: 2026-11-04}
+  - {domain: denverpost.com, name: Denver Post, tier: T2, added: 2026-11-04}
+  - {domain: oregonlive.com, name: The Oregonian, tier: T2, added: 2026-11-04}
+  - {domain: courier-journal.com, name: Louisville Courier Journal, tier: T2, added: 2026-11-04}
+  - {domain: bnnbloomberg.ca, name: BNN Bloomberg, tier: T2, added: 2026-11-04}
+  - {domain: law360.com, name: Law360, tier: T2, added: 2026-11-04}
+
+  # T3: trade press with sourced reporting
+  - {domain: thedrinksbusiness.com, name: The Drinks Business, tier: T3, added: 2026-11-04, note: "Named in original brief"}
+  - {domain: thespiritsbusiness.com, name: The Spirits Business, tier: T3, added: 2026-11-04, note: "Named in original brief"}
+  - {domain: winespectator.com, name: Wine Spectator, tier: T3, added: 2026-11-04, note: "Named in original brief"}
+  - {domain: shankennewsdaily.com, name: Shanken News Daily, tier: T3, added: 2026-11-04}
+  - {domain: wineenthusiast.com, name: Wine Enthusiast, tier: T3, added: 2026-11-04, note: "Named in original brief; news section only"}
+  - {domain: punchdrink.com, name: Punch, tier: T3, added: 2026-11-04, note: "Named in original brief; industry reporting only, no recipes"}
+  - {domain: foodandwine.com, name: Food & Wine, tier: T3, added: 2026-11-04, note: "Named in original brief; industry reporting only, no recipes or lists"}
+  - {domain: just-drinks.com, name: Just Drinks, tier: T3, added: 2026-11-04}
+  - {domain: drinksint.com, name: Drinks International, tier: T3, added: 2026-11-04}
+  - {domain: decanter.com, name: Decanter, tier: T3, added: 2026-11-04}
+  - {domain: winebusiness.com, name: Wine Business, tier: T3, added: 2026-11-04}
+  - {domain: beveragedynamics.com, name: Beverage Dynamics, tier: T3, added: 2026-11-04}
+  - {domain: daily.sevenfifty.com, name: SevenFifty Daily, tier: T3, added: 2026-11-04}
+  - {domain: harpers.co.uk, name: Harpers Wine & Spirit, tier: T3, added: 2026-11-04}
+
+block:
+  # Seeded from your original rule ("not a blog or something"): these brand
+  # blogs came up in research for the sample issue.
+  - {domain: learnbrands.com, name: LearnBrands, added: 2026-11-04, note: "Marketing blog"}
+  - {domain: kineuphorics.com, name: Kin Euphorics, added: 2026-11-04, note: "Brand blog"}
+  - {domain: zentopia.com, name: Zentopia, added: 2026-11-04, note: "Brand blog"}
+  - {domain: cornbreadhemp.com, name: Cornbread Hemp, added: 2026-11-04, note: "Brand blog"}
+  - {domain: trytruli.com, name: Truli, added: 2026-11-04, note: "Brand blog"}
+  - {domain: recovered.org, name: Recovered.org, added: 2026-11-04, note: "Health content site, not news"}
+
+pending:
+  # Appeared in the 4 Nov sample issue. Each needs an allow or block decision.
+  # suggested: what Claude would choose, for you to confirm or override.
+  - {domain: bevnet.com, name: BevNET, tier: T3, added: 2026-11-04, suggested: allow, note: "Trade press with reported news; also runs paid PR posts, which would be excluded"}
+  - {domain: brewbound.com, name: Brewbound, tier: T3, added: 2026-11-04, suggested: allow, note: "BevNET's beer trade site"}
+  - {domain: wineindustryadvisor.com, name: Wine Industry Advisor, tier: T3, added: 2026-11-04, suggested: allow, note: "Mix of reporting and reposted releases"}
+  - {domain: cspdailynews.com, name: CSP Daily News, tier: T3, added: 2026-11-04, suggested: allow, note: "Convenience-store trade press"}
+  - {domain: wweek.com, name: Willamette Week, tier: T2, added: 2026-11-04, suggested: allow, note: "Portland alt-weekly newspaper"}
+  - {domain: nj1015.com, name: New Jersey 101.5, tier: T2, added: 2026-11-04, suggested: allow, note: "Radio station newsroom"}
+  - {domain: local3news.com, name: Local 3 News (Chattanooga), tier: T2, added: 2026-11-04, suggested: allow, note: "TV station newsroom"}
+  - {domain: wect.com, name: WECT (Wilmington NC), tier: T2, added: 2026-11-04, suggested: allow, note: "TV station newsroom"}
+  - {domain: sueddeutsche.de, name: Süddeutsche Zeitung, tier: T2, added: 2026-11-04, suggested: allow, note: "German daily newspaper"}
+  - {domain: elfinanciero.com.mx, name: El Financiero, tier: T2, added: 2026-11-04, suggested: allow, note: "Mexican business daily"}
+  - {domain: bizcommunity.com, name: BizCommunity, tier: T3, added: 2026-11-04, suggested: allow, note: "South African business trade site"}
+  - {domain: politicsweb.co.za, name: Politicsweb, tier: T2, added: 2026-11-04, suggested: block, note: "Reposts statements; cite the issuing body instead"}
+  - {domain: benzinga.com, name: Benzinga, tier: T1b, added: 2026-11-04, suggested: block, note: "Mostly reposted press releases; cite the company instead"}
+  - {domain: jdsupra.com, name: JD Supra, tier: T3, added: 2026-11-04, suggested: allow, note: "Law-firm regulatory updates; useful for Gov Affairs"}
+  - {domain: boursorama.com, name: Boursorama, tier: T1b, added: 2026-11-04, suggested: block, note: "French finance portal reposting releases; cite the company"}
+  - {domain: livedoor.com, name: Livedoor, tier: T2, added: 2026-11-04, suggested: block, note: "Japanese aggregator; cite the original (Reuters)"}
+  - {domain: vinetur.com, name: Vinetur, tier: T3, added: 2026-11-04, suggested: block, note: "Rewrites other outlets' stories"}
+  - {domain: thewhiskeywash.com, name: The Whiskey Wash, tier: T3, added: 2026-11-04, suggested: block, note: "Enthusiast blog"}
+  - {domain: parkstreet.com, name: Park Street, tier: T1b, added: 2026-11-04, suggested: block, note: "Vendor content marketing"}
+  - {domain: drinks-intel.com, name: Drinks Intel, tier: T3, added: 2026-11-04, suggested: block, note: "Rewrites other outlets' stories"}
+  - {domain: gpi.org, name: Glass Packaging Institute, tier: T1, added: 2026-11-04, suggested: allow, note: "Packaging trade association"}
+  - {domain: thestreet.com, name: TheStreet, tier: T2, added: 2026-11-04, suggested: allow, note: "Business news site (seen via Yahoo syndication)"}
+
+syndicators:
+  - {domain: aol.com, note: "Resolve to the original publisher"}
+  - {domain: yahoo.com, note: "Resolve to the original publisher"}
+  - {domain: msn.com, note: "Resolve to the original publisher"}
+  - {domain: news.google.com, note: "Resolve to the original publisher"}
+  - {domain: app.bigdata.com, note: "Research tool; link the original publisher"}
