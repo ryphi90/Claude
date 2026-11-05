@@ -145,6 +145,16 @@ allow:
 
   - {domain: drinks-intel.com, name: Drinks Intel, tier: T3, added: 2026-11-04, note: "Previously blocked as rewriting other outlets. User feedback 2026-11-04: \"include drinks intel into the allow list\""}
 
+  # suggested: allow|block, Claude's recommendation for you to confirm.
+
+  - {domain: wwaytv3.com, name: WWAY (Wilmington NC), tier: T2, added: 2026-11-05, note: "TV station newsroom. First used in the 4 Nov update. Not blocked by the 5 Nov run, so moved to allow per the pending rule"}
+
+  - {domain: distributionstrategy.com, name: Distribution Strategy Group, tier: T3, added: 2026-11-05, note: "Distribution industry trade site. First used in the 4 Nov update. Not blocked by the 5 Nov run, so moved to allow per the pending rule"}
+
+  - {domain: marijuanamoment.net, name: Marijuana Moment, tier: T3, added: 2026-11-05, note: "Cannabis policy trade news; used to carry Politico reporting (politico.com blocks search). First used in the 4 Nov update. Not blocked by the 5 Nov run, so moved to allow per the pending rule"}
+
+  - {domain: inc.com, name: Inc., tier: T2, added: 2026-11-05, note: "Business magazine. First used in the 4 Nov update. Not blocked by the 5 Nov run, so moved to allow per the pending rule"}
+
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
   # blogs came up in research for the sample issue.
@@ -170,11 +180,6 @@ block:
 
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
-  # suggested: allow|block, Claude's recommendation for you to confirm.
-  - {domain: wwaytv3.com, name: WWAY (Wilmington NC), tier: T2, added: 2026-11-04, suggested: allow, note: "TV station newsroom. First used in the 4 Nov update"}
-  - {domain: distributionstrategy.com, name: Distribution Strategy Group, tier: T3, added: 2026-11-04, suggested: allow, note: "Distribution industry trade site. First used in the 4 Nov update"}
-  - {domain: marijuanamoment.net, name: Marijuana Moment, tier: T3, added: 2026-11-04, suggested: allow, note: "Cannabis policy trade news; used to carry Politico reporting (politico.com blocks search). First used in the 4 Nov update"}
-  - {domain: inc.com, name: Inc., tier: T2, added: 2026-11-04, suggested: allow, note: "Business magazine. First used in the 4 Nov update"}
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}

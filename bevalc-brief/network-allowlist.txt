@@ -104,7 +104,7 @@ wsj.com
 wswa.org
 wweek.com
 
-# Pending (not blocked, so included)
+# Moved from pending to allow on 5 Nov
 distributionstrategy.com
 inc.com
 marijuanamoment.net
