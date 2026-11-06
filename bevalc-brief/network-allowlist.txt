@@ -109,3 +109,6 @@ distributionstrategy.com
 inc.com
 marijuanamoment.net
 wwaytv3.com
+
+# Pending (not blocked, so included)
+winemarketcouncil.com

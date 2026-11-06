@@ -180,6 +180,7 @@ block:
 
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
+  - {domain: winemarketcouncil.com, name: Wine Market Council, tier: T1, added: 2026-11-06, suggested: allow, note: "Wine consumer research organization. First used in the 6 Nov update"}
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
