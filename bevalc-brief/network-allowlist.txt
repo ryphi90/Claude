@@ -110,5 +110,5 @@ inc.com
 marijuanamoment.net
 wwaytv3.com
 
-# Pending (not blocked, so included)
+# Moved from pending to allow on 7 Nov
 winemarketcouncil.com

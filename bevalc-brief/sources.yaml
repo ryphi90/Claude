@@ -155,6 +155,8 @@ allow:
 
   - {domain: inc.com, name: Inc., tier: T2, added: 2026-11-05, note: "Business magazine. First used in the 4 Nov update. Not blocked by the 5 Nov run, so moved to allow per the pending rule"}
 
+  - {domain: winemarketcouncil.com, name: Wine Market Council, tier: T1, added: 2026-11-07, note: "Wine consumer research organization. First used in the 6 Nov update. Not blocked by the 7 Nov run, so moved to allow per the pending rule"}
+
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
   # blogs came up in research for the sample issue.
@@ -180,7 +182,6 @@ block:
 
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
-  - {domain: winemarketcouncil.com, name: Wine Market Council, tier: T1, added: 2026-11-06, suggested: allow, note: "Wine consumer research organization. First used in the 6 Nov update"}
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
