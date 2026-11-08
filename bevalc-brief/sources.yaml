@@ -183,6 +183,7 @@ block:
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
 
+  - {domain: diageo.com, name: Diageo, tier: T1b, added: 2026-11-08, note: "Company release first cited 2026-11-08 (Q1 FY27 trading statement). Moves to allow at the next run unless blocked."}
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
   - {domain: yahoo.com, note: "Resolve to the original publisher"}

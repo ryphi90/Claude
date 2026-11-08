@@ -112,3 +112,6 @@ wwaytv3.com
 
 # Moved from pending to allow on 7 Nov
 winemarketcouncil.com
+
+# Pending as of 8 Nov
+diageo.com
