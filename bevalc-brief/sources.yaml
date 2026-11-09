@@ -156,6 +156,7 @@ allow:
   - {domain: inc.com, name: Inc., tier: T2, added: 2026-11-05, note: "Business magazine. First used in the 4 Nov update. Not blocked by the 5 Nov run, so moved to allow per the pending rule"}
 
   - {domain: winemarketcouncil.com, name: Wine Market Council, tier: T1, added: 2026-11-07, note: "Wine consumer research organization. First used in the 6 Nov update. Not blocked by the 7 Nov run, so moved to allow per the pending rule"}
+  - {domain: diageo.com, name: Diageo, tier: T1b, added: 2026-11-09, note: "Pending since 2026-11-08 with no block; moved to allow on 2026-11-09."}
 
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
@@ -182,8 +183,10 @@ block:
 
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
+  - {domain: fox29.com, name: FOX 29 Philadelphia, tier: T2, added: 2026-11-09, note: "Local TV newsroom, first cited 2026-11-09 (Collingswood vote)."}
+  - {domain: wlox.com, name: WLOX, tier: T2, added: 2026-11-09, note: "Local TV newsroom, first cited 2026-11-09 (Pearl River County vote)."}
+  - {domain: michelin.com, name: Michelin Guide, tier: T1b, added: 2026-11-09, note: "Issuer release, first cited 2026-11-09 (MICHELIN Grapes Napa selection)."}
 
-  - {domain: diageo.com, name: Diageo, tier: T1b, added: 2026-11-08, note: "Company release first cited 2026-11-08 (Q1 FY27 trading statement). Moves to allow at the next run unless blocked."}
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
   - {domain: yahoo.com, note: "Resolve to the original publisher"}
