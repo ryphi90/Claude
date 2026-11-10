@@ -116,7 +116,11 @@ winemarketcouncil.com
 # Moved from pending to allow on 9 Nov
 diageo.com
 
-# Pending as of 9 Nov
+# Moved from pending to allow on 10 Nov
 fox29.com
 wlox.com
 michelin.com
+
+# Pending as of 10 Nov
+axios.com
+chicago.suntimes.com
