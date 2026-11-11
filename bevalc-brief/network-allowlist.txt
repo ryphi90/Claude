@@ -121,6 +121,6 @@ fox29.com
 wlox.com
 michelin.com
 
-# Pending as of 10 Nov
+# Moved from pending to allow on 11 Nov
 axios.com
 chicago.suntimes.com
