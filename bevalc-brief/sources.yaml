@@ -188,6 +188,7 @@ block:
 
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
+  - {domain: nj.gov, name: NJ Division of Taxation, tier: T1, added: 2026-11-13, note: "State agency page, first cited 2026-11-13 (NJ hemp-beverage cutoff)."}
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
