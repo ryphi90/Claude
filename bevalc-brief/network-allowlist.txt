@@ -125,5 +125,5 @@ michelin.com
 axios.com
 chicago.suntimes.com
 
-# Pending as of 13 Nov
+# Moved from pending to allow on 14 Nov
 nj.gov

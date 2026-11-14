@@ -162,6 +162,7 @@ allow:
   - {domain: michelin.com, name: Michelin Guide, tier: T1b, added: 2026-11-10, note: "Issuer release, first cited 2026-11-09 (MICHELIN Grapes Napa selection). Pending since 2026-11-09 with no block; moved to allow on 2026-11-10."}
   - {domain: axios.com, name: Axios, tier: T2, added: 2026-11-11, note: "First cited 2026-11-10 (Illinois THC drinks pulled from liquor stores). Pending since 2026-11-10 with no block; moved to allow on 2026-11-11."}
   - {domain: chicago.suntimes.com, name: Chicago Sun-Times, tier: T2, added: 2026-11-11, note: "First cited 2026-11-10 (Illinois hemp TRO motion). Pending since 2026-11-10 with no block; moved to allow on 2026-11-11."}
+  - {domain: nj.gov, name: NJ Division of Taxation, tier: T1, added: 2026-11-14, note: "State agency page, first cited 2026-11-13 (NJ hemp-beverage cutoff). Pending since 2026-11-13 with no block; moved to allow on 2026-11-14."}
 
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
@@ -188,7 +189,6 @@ block:
 
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
-  - {domain: nj.gov, name: NJ Division of Taxation, tier: T1, added: 2026-11-13, note: "State agency page, first cited 2026-11-13 (NJ hemp-beverage cutoff)."}
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
