@@ -189,6 +189,8 @@ block:
 
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
+  - {domain: bostonbeer.com, name: Boston Beer, tier: T1b, added: 2026-11-21, note: "Company release, first cited 2026-11-21 (CEO change, via SEC 8-K)."}
+  - {domain: whiskyadvocate.com, name: Whisky Advocate, tier: T3, added: 2026-11-21, note: "First cited 2026-11-21 (Top 20 Whiskies of 2026)."}
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
