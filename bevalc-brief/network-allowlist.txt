@@ -128,6 +128,6 @@ chicago.suntimes.com
 # Moved from pending to allow on 14 Nov
 nj.gov
 
-# Pending as of 21 Nov
+# Moved from pending to allow on 22 Nov
 bostonbeer.com
 whiskyadvocate.com

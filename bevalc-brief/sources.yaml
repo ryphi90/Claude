@@ -163,6 +163,8 @@ allow:
   - {domain: axios.com, name: Axios, tier: T2, added: 2026-11-11, note: "First cited 2026-11-10 (Illinois THC drinks pulled from liquor stores). Pending since 2026-11-10 with no block; moved to allow on 2026-11-11."}
   - {domain: chicago.suntimes.com, name: Chicago Sun-Times, tier: T2, added: 2026-11-11, note: "First cited 2026-11-10 (Illinois hemp TRO motion). Pending since 2026-11-10 with no block; moved to allow on 2026-11-11."}
   - {domain: nj.gov, name: NJ Division of Taxation, tier: T1, added: 2026-11-14, note: "State agency page, first cited 2026-11-13 (NJ hemp-beverage cutoff). Pending since 2026-11-13 with no block; moved to allow on 2026-11-14."}
+  - {domain: bostonbeer.com, name: Boston Beer, tier: T1b, added: 2026-11-22, note: "Company release, first cited 2026-11-21 (CEO change, via SEC 8-K). Pending since 2026-11-21 with no block; moved to allow on 2026-11-22."}
+  - {domain: whiskyadvocate.com, name: Whisky Advocate, tier: T3, added: 2026-11-22, note: "First cited 2026-11-21 (Top 20 Whiskies of 2026). Pending since 2026-11-21 with no block; moved to allow on 2026-11-22."}
 
 block:
   # Seeded from your original rule ("not a blog or something"): these brand
@@ -189,8 +191,6 @@ block:
 
 pending:
   # Sources seen in a brief that have no decision yet. Each entry carries
-  - {domain: bostonbeer.com, name: Boston Beer, tier: T1b, added: 2026-11-21, note: "Company release, first cited 2026-11-21 (CEO change, via SEC 8-K)."}
-  - {domain: whiskyadvocate.com, name: Whisky Advocate, tier: T3, added: 2026-11-21, note: "First cited 2026-11-21 (Top 20 Whiskies of 2026)."}
 
 syndicators:
   - {domain: aol.com, note: "Resolve to the original publisher"}
